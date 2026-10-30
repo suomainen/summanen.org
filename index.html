@@ -108,7 +108,7 @@
   .menu__list a[aria-current="location"] { background: rgba(224, 138, 60, 0.12); color: var(--ice); }
   .menu__list a[aria-current="location"]::after { content: ""; margin-left: auto; width: 6px; height: 6px; border-radius: 50%; background: var(--ember); }
   .menu__list li + li.menu__sep { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
-  .hud--bl { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); left: 24px; }
+  .hud--bl { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); right: calc(24px + env(safe-area-inset-right, 0px)); text-align: right; }
 
   .bar { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 7; background: linear-gradient(90deg, var(--electric-2), var(--ember)); }
 
