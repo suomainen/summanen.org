@@ -6,17 +6,28 @@ Oskari Summasen henkilö- ja yrityssivu. Julkaistaan GitHub Pagesilla: https://s
 
 ```
 index.html            sivun sisältö
+404.html              "sivua ei löytynyt" -sivu
+favicon.ico           selainvälilehden kuvake (16/32/48 px)
+favicon.svg           sama kuvake vektorina
+apple-touch-icon.png  iPhonen/iPadin kotivalikkokuvake (180 px)
+site.webmanifest      Android-kuvakkeet ja sovelluksen nimi
+robots.txt            ohjeet hakukoneille
+sitemap.xml           sivukartta hakukoneille
 css/
   fonts.css           @font-face-määrittelyt
   style.css           sivun tyylit
 js/
+  consent.js          evästeilmoitus ja Google Analytics 4 (latautuu vasta suostumuksella)
   main.js             3D-metsä, vieritysanimaatiot, valikko ja kopiointinapit
   vendor/             kolmannen osapuolen kirjastot (ei muokata)
 fonts/                fonttitiedostot (woff2)
-img/                  logot ja henkilökuvat
+img/                  logot, henkilökuvat ja jakokuva (og-kuva.jpg)
+  icons/              Android-kuvakkeet (192/512 px)
 ```
 
-Sivu ei lataa mitään ulkopuolisilta palvelimilta: kirjastot ja fontit ovat repositoriossa.
+Kirjastot ja fontit ovat repositoriossa. Ainoa ulkopuolinen lataus on Google Analytics, ja sekin vasta kävijän suostumuksella.
+
+Hakukoneita varten sivulla on kuvaus, kanoninen osoite, Open Graph- ja Twitter-jakotiedot sekä JSON-LD-henkilötiedot. Kun sivuun tehdään isompia muutoksia, päivitä `sitemap.xml`:n `lastmod`-päivämäärä.
 
 ## Paikallinen esikatselu
 

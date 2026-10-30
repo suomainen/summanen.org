@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sivua ei löytynyt – summanen.org</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E1714">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/fonts.css">
+<style>
+  :root { --void: #0E1714; --ice: #F6F4EF; --ember: #E08A3C; --text-2: #D6DDD7; --muted: #A3B6AC; --line: rgba(143, 199, 180, 0.28); color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; gap: 22px;
+    padding-block: 64px; padding-left: max(16px, 7vw); padding-right: max(16px, 7vw);
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 100%, rgba(143, 199, 180, 0.12), transparent 70%),
+      radial-gradient(ellipse 45% 35% at 80% 20%, rgba(224, 138, 60, 0.10), transparent 70%),
+      var(--void);
+    color: var(--ice); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.6;
+  }
+  .brand { position: fixed; top: 22px; left: max(16px, 24px); }
+  .brand img { height: 22px; width: auto; display: block; }
+  .tag { margin: 0; font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember); }
+  h1 { margin: 0; font-family: 'Archivo', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: 118%; font-size: clamp(44px, 10vw, 120px); line-height: 0.94; letter-spacing: -0.04em; text-wrap: balance; }
+  h1 span { color: var(--ember); text-shadow: 0 0 30px rgba(224, 138, 60, 0.35); }
+  p.say { margin: 0; max-width: 46ch; color: var(--text-2); font-size: clamp(15px, 1.7vw, 19px); }
+  a.home {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 20px;
+    border: 1px solid var(--line); border-radius: 999px; color: var(--ice); text-decoration: none; letter-spacing: 0.04em;
+  }
+  a.home:hover { border-color: var(--ember); }
+  a:focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; }
+</style>
+</head>
+<body>
+  <a class="brand" href="/"><img src="/img/summanen-logo-pieni.png" alt="summanen.org, etusivulle" width="360" height="46"></a>
+  <p class="tag">Virhe 404</p>
+  <h1>Polku katosi<br><span>metsään</span></h1>
+  <p class="say">Hakemaasi sivua ei löytynyt. Se on voinut siirtyä, tai osoitteessa on kirjoitusvirhe.</p>
+  <a class="home" href="/">← Takaisin etusivulle</a>
+</body>
+</html>
