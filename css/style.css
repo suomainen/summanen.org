@@ -90,12 +90,12 @@ body {
 }
 .menu__list:not([hidden]) { animation: menu-drop .18s ease-out; }
 @keyframes menu-drop { from { opacity: 0; transform: translateY(-6px); } }
-.menu__list a {
+.menu__list a, .menu__list button {
   display: flex; align-items: center; gap: 14px; min-height: 46px; padding: 0 14px; border-radius: 10px;
   color: var(--text-2); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: -0.01em;
 }
-.menu__list a span { flex: none; width: 30px; font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: 0.04em; color: var(--ember); }
-.menu__list a:hover { background: rgba(143, 199, 180, 0.08); color: var(--ice); }
+.menu__list a span, .menu__list button span { flex: none; width: 30px; font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: 0.04em; color: var(--ember); }
+.menu__list a:hover, .menu__list button:hover { background: rgba(143, 199, 180, 0.08); color: var(--ice); }
 .menu__list a[aria-current="location"] { background: rgba(224, 138, 60, 0.12); color: var(--ice); }
 .menu__list a[aria-current="location"]::after { content: ""; margin-left: auto; width: 6px; height: 6px; border-radius: 50%; background: var(--ember); }
 .menu__list li + li.menu__sep { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
@@ -323,13 +323,5 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline
 .consent__btn--primary { background: var(--ember); border-color: var(--ember); color: var(--void); }
 .consent__btn--primary:hover { background: #EC9A50; }
 
-/* pieni linkki valinnan muuttamiseen vasemmassa alakulmassa */
-.consent-open {
-  position: fixed; z-index: 7;
-  left: calc(16px + env(safe-area-inset-left, 0px));
-  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
-  min-height: 32px; padding: 0 8px; border: 0; background: none; cursor: pointer;
-  font: inherit; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-  text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px;
-}
-.consent-open:hover { color: var(--ice); text-decoration-color: var(--ember); }
+/* valikon Evästeet-kohta on nappi, joka näyttää samalta kuin valikon linkit */
+.menu__list button { width: 100%; border: 0; background: none; cursor: pointer; text-align: left; }

@@ -60,7 +60,7 @@
       setMenu(open);
       if (open) { var cur = menuList.querySelector('[aria-current]') || menuLinks[0]; cur.focus(); }
     });
-    menuList.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    menuList.addEventListener('click', function (e) { if (e.target.closest('a, button')) setMenu(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menuList.hidden) setMenu(false, true); });
     document.addEventListener('click', function (e) { if (!menuList.hidden && !e.target.closest('.menu')) setMenu(false); });
     document.querySelector('.menu').addEventListener('focusout', function (e) {
