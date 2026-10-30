@@ -1,0 +1,19 @@
+# Oskari Summanen
+
+> Oskari Summanen on paimiolainen järjestelmäarkkitehti, yrittäjä ja kaupunginvaltuutettu. Hänellä on yli 20 vuoden kokemus IT-alalta ja yli 10 vuoden kokemus paikkatiedosta. Osaamisalueet: paikkatieto, data, automaatio, tekoäly ja ohjelmistokehityksen elinkaari (SDLC).
+
+Tämä on summanen.org-sivuston tiivistelmä tekoälyhakukoneille ja kielimalleille. Sivusto on suomenkielinen.
+
+## Roolit
+
+- **Järjestelmäarkkitehti, Sitowise Oy:** Digi-liiketoiminta-alueen Core Ops -tiimin esihenkilö. Vastaa yhteisistä palvelualustoista, kehitysympäristöistä, käyttövaltuuksista ja teknologian kustannuksista. Tekoälyratkaisujen käyttöönotto ja hallinta. Digi Techboardin puheenjohtaja Suomessa ja Ruotsissa.
+- **Yrittäjä, summanen.org:** Analyysi- ja automaatiotyötä IT-kentällä ja paikkatiedoissa. Rekisterivertailu, joka nostaa esiin rakennukset, jotka puuttuvat rekisteristä tai ovat siellä väärin. Kumppanina VLiNdATA Oy.
+- **Kaupunginvaltuutettu, Paimio:** Valtuusto, ympäristölautakunta ja teknisen lautakunnan varajäsenyys vuodesta 2025. Paimion kaupungin tietohallinnossa 2010–2023, viimeksi ICT-pääsuunnittelijana.
+- **Isä:** Kolme teini-ikäistä poikaa.
+
+## Linkit
+
+- [Etusivu](https://summanen.org/): roolit, osaaminen ja yhteystiedot
+- [LinkedIn](https://www.linkedin.com/in/oskarisummanen)
+- [VLiNdATA Oy](https://vlindata.fi): kumppani, jonka kautta analyysit ja palvelut tarjotaan kunnille
+- [Sitowise](https://www.sitowise.com/fi)

@@ -16,6 +16,7 @@ favicon.svg           sama kuvake vektorina
 apple-touch-icon.png  iPhonen ja iPadin kotivalikkokuvake (180 px)
 site.webmanifest      Android-kuvakkeet ja sovelluksen nimi
 robots.txt            ohjeet hakukoneille
+llms.txt              tiivistelmä tekoälyhakukoneille ja kielimalleille
 sitemap.xml           sivukartta hakukoneille
 css/
   fonts.css           @font-face-määrittelyt
@@ -25,7 +26,7 @@ js/
   main.js             3D-metsä, vieritysanimaatiot, valikko ja kopiointinapit
   vendor/             kolmannen osapuolen kirjastot (ei muokata)
 fonts/                fonttitiedostot (woff2)
-img/                  logot, henkilökuvat ja jakokuva (og-kuva.jpg)
+img/                  logot (WebP), henkilökuvat ja jakokuva (og-kuva.jpg)
   icons/              Android-kuvakkeet (192/512 px)
 ```
 
@@ -64,6 +65,10 @@ Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta: kirjastot ja fontit o
 ## Hakukoneet ja jakaminen
 
 `index.html`:n `<head>`-osassa on otsikko, kuvaus, kanoninen osoite, Open Graph- ja Twitter-jakotiedot (jakokuva `img/og-kuva.jpg`, 1200 × 630 px) sekä JSON-LD-rakenteinen tieto (WebSite ja Person).
+
+## Suorituskyky
+
+Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynnistyy vasta, kun sivu on latautunut ja kävijä vierittää tai liikuttaa hiirtä, tai viimeistään kuuden sekunnin kuluttua. Piirtäminen pysähtyy, kun välilehti on piilossa, ja puhelimessa puita on vähemmän ja piirtotarkkuus matalampi.
 
 ## Kolmannen osapuolen tiedostot ja oikeudet
 
