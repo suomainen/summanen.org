@@ -299,3 +299,37 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline
   .scene { min-height: 0; padding: 72px 7vw; }
   .roles a { transition: none; }
 }
+
+/* Evästeilmoitus: kiinteä laatikko alhaalla vasemmalla, molemmat valinnat yhtä helppoja */
+.consent {
+  position: fixed; z-index: 20;
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: min(440px, calc(100vw - 32px));
+  padding: 20px 22px;
+  background: rgba(var(--scrim), 0.97); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+  font-size: 14px; line-height: 1.55; color: var(--text-2);
+}
+.consent__title { margin: 0 0 6px; font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ice); }
+.consent__text { margin: 0; }
+.consent__actions { display: flex; gap: 10px; margin-top: 16px; }
+.consent__btn {
+  flex: 1; min-height: 44px; padding: 0 16px; border-radius: 999px; cursor: pointer;
+  font: inherit; font-weight: 500; letter-spacing: 0.04em;
+  background: transparent; color: var(--ice); border: 1px solid var(--line);
+}
+.consent__btn:hover { border-color: var(--ember); }
+.consent__btn--primary { background: var(--ember); border-color: var(--ember); color: var(--void); }
+.consent__btn--primary:hover { background: #EC9A50; }
+
+/* pieni linkki valinnan muuttamiseen vasemmassa alakulmassa */
+.consent-open {
+  position: fixed; z-index: 7;
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+  min-height: 32px; padding: 0 8px; border: 0; background: none; cursor: pointer;
+  font: inherit; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
+  text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px;
+}
+.consent-open:hover { color: var(--ice); text-decoration-color: var(--ember); }

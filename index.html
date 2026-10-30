@@ -2,15 +2,7 @@
 <html lang="fi">
 <head>
 <meta charset="utf-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MMCSFYS9GC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MMCSFYS9GC');
-</script>
+<script src="js/consent.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Oskari Summanen: järjestelmäarkkitehti, yrittäjä, kaupunginvaltuutettu ja isä. Paikkatieto, data ja automaatio.">
 <title>Kelluva kanta</title>
@@ -130,6 +122,16 @@
   </section>
 
 </main>
+
+<section class="consent" id="consent" role="region" aria-labelledby="consent-title" hidden>
+  <p class="consent__title" id="consent-title">Evästeet</p>
+  <p class="consent__text">Käytän Google Analyticsia nähdäkseni, kuinka moni sivulla käy. Seuranta alkaa vain, jos hyväksyt sen. Voit muuttaa valintaa milloin tahansa sivun alareunan Evästeet-linkistä.</p>
+  <div class="consent__actions">
+    <button type="button" class="consent__btn consent__btn--primary" id="consent-accept">Hyväksy</button>
+    <button type="button" class="consent__btn" id="consent-reject">Hylkää</button>
+  </div>
+</section>
+<button type="button" class="consent-open" id="consent-open">Evästeet</button>
 
 <script src="js/vendor/three.min.js"></script>
 <script src="js/vendor/gsap.min.js"></script>
