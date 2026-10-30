@@ -1,0 +1,33 @@
+# Käyttöjärjestelmä
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# OneDrive
+*.tmp
+~$*
+
+# Editorit
+.vscode/
+.idea/
+*.swp
+*~
+
+# Riippuvuudet ja build-tulosteet (jos niitä myöhemmin tulee)
+node_modules/
+dist/
+build/
+.cache/
+
+# Ympäristömuuttujat ja salaisuudet
+.env
+.env.*
+*.key
+*.pem
+
+# Lokit ja varmuuskopiot
+*.log
+*.bak
+*.orig
