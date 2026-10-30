@@ -141,7 +141,7 @@
     var unitTrunk = new THREE.CylinderGeometry(1, 1, 1, 5, 1);
     var unitCrown = new THREE.IcosahedronGeometry(1, 0);
     var shapes = [unitCone, unitTrunk, unitCrown].map(function (g) {
-      return { body: g.toNonIndexed().attributes.position.array, edge: new THREE.EdgesGeometry(g).attributes.position.array };
+      return { body: (g.index ? g.toNonIndexed() : g).attributes.position.array, edge: new THREE.EdgesGeometry(g).attributes.position.array };
     });
     var CONE = 0, TRUNK = 1, CROWN = 2;
 
