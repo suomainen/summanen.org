@@ -3,7 +3,7 @@
   "short_name": "summanen.org",
   "lang": "fi",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#0E1714",
   "theme_color": "#0E1714",
   "icons": [
