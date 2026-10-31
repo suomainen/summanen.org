@@ -2,7 +2,7 @@
 
 > Oskari Summanen on paimiolainen järjestelmäarkkitehti, yrittäjä ja kaupunginvaltuutettu. Hänellä on yli 20 vuoden kokemus IT-alalta ja yli 10 vuoden kokemus paikkatiedosta. Osaamisalueet: paikkatieto, data, automaatio, tekoäly ja ohjelmistokehityksen elinkaari (SDLC).
 
-Tämä on summanen.org-sivuston tiivistelmä tekoälyhakukoneille ja kielimalleille. Sivusto on suomeksi, ja englanninkielinen versio on osoitteessa https://summanen.org/en/.
+Tämä on summanen.org-sivuston tiivistelmä tekoälyhakukoneille ja kielimalleille. Sivusto on suomeksi, ja englanninkielinen versio on osoitteessa https://summanen.org/en/. Tiivistelmä englanniksi on tämän tiedoston lopussa (In English).
 
 ## Roolit
 
@@ -18,3 +18,22 @@ Tämä on summanen.org-sivuston tiivistelmä tekoälyhakukoneille ja kielimallei
 - [LinkedIn](https://www.linkedin.com/in/oskarisummanen)
 - [VLiNdATA Oy](https://vlindata.fi): kumppani, jonka kautta analyysit ja palvelut tarjotaan kunnille
 - [Sitowise](https://www.sitowise.com/fi)
+
+## In English
+
+Oskari Summanen is a systems architect, entrepreneur and city councillor from Paimio, Finland. He has over 20 years of experience in IT and over 10 years in geospatial data. Areas of expertise: geospatial data, data, automation, AI and the software development life cycle (SDLC). The site is primarily in Finnish; the English version is at https://summanen.org/en/.
+
+## Roles
+
+- **Systems Architect, Sitowise Oy:** Team lead of the Core Ops team in the Digi business area. Responsible for shared service platforms, development environments, access rights and technology costs. Deploying and managing AI solutions. Chair of the Digi Techboard in Finland and Sweden.
+- **Entrepreneur, summanen.org:** Analysis and automation work in IT and geospatial data. Register comparison that brings to light buildings missing from the register or recorded incorrectly. Partner: VLiNdATA Oy.
+- **City Councillor, Paimio:** Member of the city council and the environmental board, and deputy member of the technical board, since 2025. City of Paimio IT administration 2010–2023, most recently as Principal ICT Planner.
+- **Father:** Three teenage sons.
+
+## Links
+
+- [English version](https://summanen.org/en/): roles, expertise and contact details
+- [Finnish version](https://summanen.org/): the same content in Finnish
+- [LinkedIn](https://www.linkedin.com/in/oskarisummanen)
+- [VLiNdATA Oy](https://vlindata.fi): partner through which the analyses and services are offered to municipalities
+- [Sitowise](https://www.sitowise.com/)

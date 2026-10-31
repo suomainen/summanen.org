@@ -17,7 +17,7 @@ favicon.svg           sama kuvake vektorina
 apple-touch-icon.png  iPhonen ja iPadin kotivalikkokuvake (180 px)
 site.webmanifest      Android-kuvakkeet ja sovelluksen nimi
 robots.txt            ohjeet hakukoneille
-llms.txt              tiivistelmä tekoälyhakukoneille ja kielimalleille
+llms.txt              tiivistelmä tekoälyhakukoneille ja kielimalleille (suomeksi ja englanniksi)
 sitemap.xml           sivukartta hakukoneille
 css/
   fonts.css           @font-face-määrittelyt
