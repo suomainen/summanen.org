@@ -419,7 +419,7 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
 
 /* some-palveluiden logot pyöreinä nappeina, samaan tyyliin kuin kopiointinapit */
 /* neljä logoa rivissä, jotta kahdeksan logoa asettuu siististi kahdelle riville */
-.social { display: grid; grid-template-columns: repeat(4, 44px); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.social { display: grid; grid-template-columns: repeat(4, 44px); gap: 14px; margin: 0; padding: 12px 0; list-style: none; }
 .social__link {
   display: grid; place-items: center;
   width: 44px; height: 44px;
