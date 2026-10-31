@@ -1,8 +1,12 @@
 /* Valikko oikeassa ylänurkassa ja tieto siitä, mikä osio on nyt näkyvissä.
    - Klikkaus avaa ja sulkee. Hiirellä valikko aukeaa myös, kun hiiri viedään sen päälle.
    - Esc, klikkaus valikon ulkopuolelle tai fokuksen siirtyminen pois sulkee valikon.
-   - Nykyinen osio näkyy napin vieressä ja valikossa (aria-current). */
+   - Nykyinen osio näkyy napin vieressä ja valikossa (aria-current).
+   - Sivuston versionumero näkyy valikon alareunassa. */
 (() => {
+  /* sivuston versio: nosta tätä, lisää rivi CHANGELOG.md:hen ja tee samanniminen git-tagi (ks. README) */
+  const SITE_VERSION = '1.7.0';
+
   /* teksti napin vieressä osioiden järjestyksessä (data-s / data-i), sivun kielen mukaan */
   const SECTION_LABELS = {
     fi: ['neljä roolia', 'rooli 1/4 · arkkitehti', 'rooli 2/4 · yrittäjä', 'rooli 3/4 · valtuutettu', 'rooli 4/4 · isä', 'yhteys · auki'],
@@ -19,6 +23,8 @@
   const list = document.getElementById('menu-list');
   const links = list.querySelectorAll('a');
   const stateLabel = document.getElementById('sys');
+
+  document.getElementById('site-version').textContent = `v${SITE_VERSION}`;
 
   /* ---- avaaminen ja sulkeminen ---- */
 

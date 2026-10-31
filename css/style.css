@@ -227,6 +227,15 @@ button:focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; bor
 }
 
 
+/* versionumero valikon alareunassa */
+.menu__list .menu__version {
+  padding: 10px 14px 4px;
+  font-size: 11px; letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.menu__list .menu__version:empty { display: none; }
+
+
 /* 4. Osiot ja otsikot ------------------------------------------------------- */
 
 main { position: relative; z-index: 4; overflow-x: clip; }

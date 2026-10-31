@@ -12,6 +12,7 @@ index.html            sivun sisältö suomeksi (ensisijainen kieli)
 en/index.html         sama sivu englanniksi (polut ../css, ../js, ../img)
 404.html              "sivua ei löytynyt" -sivu
 CNAME                 GitHub Pagesin verkkotunnus (älä poista)
+CHANGELOG.md          muutosloki: versiot ja mitä kussakin muuttui
 favicon.ico           selainvälilehden kuvake (16/32/48 px)
 favicon.svg           sama kuvake vektorina
 apple-touch-icon.png  iPhonen ja iPadin kotivalikkokuvake (180 px)
@@ -50,6 +51,7 @@ python -m http.server
 - **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit ja kameran pysähdyspaikat (yksi per osio).
 - **3D-metsän käynnistysviive:** `js/animations.js`, `FOREST_FALLBACK_MS`.
 - **Valikon roolitekstit** oikeassa ylänurkassa: `js/menu.js`, `SECTION_LABELS`.
+- **Versionumero** valikon alareunassa: `js/menu.js`, `SITE_VERSION` (ks. Versiointi).
 - Kun sivuun tehdään isompia muutoksia, päivitä `sitemap.xml`:n `lastmod`-päivämäärä.
 
 ## Julkaisu
@@ -61,6 +63,23 @@ git push
 ```
 
 Sivu päivittyy noin minuutin kuluttua. Jos `git push` hylätään, koska GitHubissa on uudempia muutoksia, aja ensin `git pull --rebase` ja sitten uudelleen `git push`.
+
+## Versiointi
+
+Versionumero on muotoa pää.osa.korjaus (esim. 1.7.0), ja se näkyy valikon alareunassa. Kun julkaiset muutoksen:
+
+1. Nosta numeroa `js/menu.js`:n `SITE_VERSION`-kohdassa: kokonaan uusi sivu → pää, uusi osio tai ominaisuus → osa, pieni korjaus → korjaus.
+2. Lisää `CHANGELOG.md`:n alkuun uusi versio, päivämäärä ja lyhyt kuvaus muutoksista.
+3. Tallenna, merkitse versio ja julkaise:
+
+```
+git add -A
+git commit -m "Kuvaus muutoksesta"
+git tag -a v1.7.1 -m "Lyhyt kuvaus"
+git push --follow-tags
+```
+
+`--follow-tags` vie GitHubiin myös versiomerkinnät (tagit).
 
 ## Analytiikka ja evästeet
 
