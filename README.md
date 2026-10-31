@@ -84,8 +84,8 @@ Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynn
 | `js/vendor/gsap.min.js`, `ScrollTrigger.min.js` | GSAP 3.12.5 | GSAP Standard License (maksuton) |
 | `fonts/archivo-variable.woff2` | Archivo | SIL Open Font License 1.1 |
 | `fonts/jetbrains-mono-variable.woff2` | JetBrains Mono | SIL Open Font License 1.1 |
-| `img/sitowise-logo.png` | – | Sitowise Oy:n tavaramerkki |
-| `img/paimio-logo.png` | – | Paimion kaupungin tunnus |
+| `img/sitowise-logo.webp` | – | Sitowise Oy:n tavaramerkki |
+| `img/paimio-logo.webp` | – | Paimion kaupungin tunnus |
 | `img/oskari-summanen.jpg`, `img/virpi-lindvall.jpg` | – | Kuvaajan tekijänoikeus, käyttö luvalla |
 
 Sivun omat tekstit, kuvat ja koodi: © Oskari Summanen. Kaikki oikeudet pidätetään.

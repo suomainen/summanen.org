@@ -89,7 +89,7 @@
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<canvas id="city"></canvas>
+<canvas id="city" aria-hidden="true"></canvas>
 <div class="air" aria-hidden="true"></div>
 <div class="bar" id="bar" aria-hidden="true"></div>
 <div class="band band--top" aria-hidden="true"></div>
@@ -99,8 +99,8 @@
 <nav class="menu" aria-label="Page sections">
   <p class="menu__state" id="sys" aria-hidden="true">four roles</p>
   <div class="lang" role="group" aria-label="Kieli – Language">
-    <a href="../" lang="fi" hreflang="fi" aria-label="Suomeksi">FI</a>
-    <a href="./" lang="en" hreflang="en" aria-current="page" aria-label="In English">EN</a>
+    <a href="../" lang="fi" hreflang="fi" aria-label="FI – suomeksi">FI</a>
+    <a href="./" lang="en" hreflang="en" aria-current="page" aria-label="EN – in English">EN</a>
   </div>
   <button class="menu__btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Menu">
     <span class="menu__icon" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -136,7 +136,7 @@
 
   <section class="scene scene--right" data-s="1" id="architect" aria-labelledby="h-architect">
     <p class="tag">Role 1/4 · Systems Architect</p>
-    <h2 id="h-architect" class="logo-h"><a class="logo-link" href="https://www.sitowise.com/" target="_blank" rel="noopener"><img src="../img/sitowise-logo.webp" alt="Sitowise Oy" width="720" height="120"><span class="sr-only"> (sitowise.com, opens in a new tab)</span></a></h2>
+    <h2 id="h-architect" class="logo-h"><a class="logo-link" href="https://www.sitowise.com/" target="_blank" rel="noopener"><img src="../img/sitowise-logo.webp" loading="lazy" decoding="async" alt="Sitowise Oy" width="720" height="120"><span class="sr-only"> (sitowise.com, opens in a new tab)</span></a></h2>
     <p class="say">As team lead of the <span class="nw">Core Ops</span> team in the Digi business area, I am responsible for shared service platforms, development environments and access rights, as well as technology costs.</p>
     <p class="site-link"><a href="https://www.sitowise.com/" target="_blank" rel="noopener">sitowise.com<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p>
     <div class="values">
@@ -149,19 +149,19 @@
 
   <section class="scene" data-s="2" id="entrepreneur" aria-labelledby="h-entrepreneur">
     <p class="tag">Role 2/4 · Entrepreneur</p>
-    <h2 id="h-entrepreneur" class="logo-h"><img class="logo-summanen" src="../img/summanen-logo.webp" alt="summanen.org" width="1040" height="133"></h2>
+    <h2 id="h-entrepreneur" class="logo-h"><img class="logo-summanen" src="../img/summanen-logo.webp" loading="lazy" decoding="async" alt="summanen.org" width="1040" height="133"></h2>
     <p class="say">Analysis and automation work in IT and geospatial data. Register comparison brings to light buildings that are missing from the register or recorded incorrectly.</p>
     <div class="values">
       <div><h3>Register comparison</h3><p>Building and tax data side by side, with the gaps shown as a map and a table.</p></div>
       <div><h3>Automation</h3><p>Recurring runs and reports without manual work.</p></div>
       <div><h3>Offline map</h3><p>A map service in a single package that works even when the network or interfaces are down.</p></div>
-      <div class="partner"><div class="partner__head"><img class="partner__img" src="../img/virpi-lindvall.jpg" alt="Virpi Lindvall" width="56" height="56"><div><h3>VLiNdATA Oy</h3><p class="partner__name">Virpi Lindvall</p></div></div><p>Partner through which the analyses and services are offered to municipalities.</p><p class="more"><a href="https://vlindata.fi" target="_blank" rel="noopener">vlindata.fi<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p></div>
+      <div class="partner"><div class="partner__head"><img class="partner__img" src="../img/virpi-lindvall.jpg" loading="lazy" decoding="async" alt="Virpi Lindvall" width="56" height="56"><div><h3>VLiNdATA Oy</h3><p class="partner__name">Virpi Lindvall</p></div></div><p>Partner through which the analyses and services are offered to municipalities.</p><p class="more"><a href="https://vlindata.fi" target="_blank" rel="noopener">vlindata.fi<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p></div>
     </div>
   </section>
 
   <section class="scene scene--right" data-s="3" id="councillor" aria-labelledby="h-councillor">
     <p class="tag">Role 3/4 · City Councillor</p>
-    <h2 id="h-councillor" class="logo-h"><a class="logo-link" href="https://www.paimio.fi" target="_blank" rel="noopener"><img class="logo-paimio" src="../img/paimio-logo.webp" alt="Paimio" width="720" height="220"><span class="sr-only"> (paimio.fi, opens in a new tab)</span></a></h2>
+    <h2 id="h-councillor" class="logo-h"><a class="logo-link" href="https://www.paimio.fi" target="_blank" rel="noopener"><img class="logo-paimio" src="../img/paimio-logo.webp" loading="lazy" decoding="async" alt="Paimio" width="720" height="220"><span class="sr-only"> (paimio.fi, opens in a new tab)</span></a></h2>
     <p class="say">Member of the city council and the environmental board, and deputy member of the technical board, since 2025. Before that, 14 years in the City of Paimio’s IT, so municipal decision-making, budgeting and the annual planning cycle are familiar from the other side of the table too.</p>
     <p class="site-link"><a href="https://www.paimio.fi" target="_blank" rel="noopener">paimio.fi<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p>
     <div class="values">
@@ -191,8 +191,8 @@
     <span class="sr-only" id="copy-status" aria-live="polite"></span>
     <div class="contact vcard">
       <div class="vcard__head">
-        <img class="vcard__img" src="../img/oskari-summanen.jpg" alt="Oskari Summanen" width="88" height="88">
-        <div><p class="vcard__name">Oskari Summanen</p><p class="vcard__role"><img src="../img/summanen-logo-pieni.webp" alt="summanen.org" width="360" height="46"></p></div>
+        <img class="vcard__img" src="../img/oskari-summanen.jpg" loading="lazy" decoding="async" alt="Oskari Summanen" width="88" height="88">
+        <div><p class="vcard__name">Oskari Summanen</p><p class="vcard__role"><img src="../img/summanen-logo-pieni.webp" loading="lazy" decoding="async" alt="summanen.org" width="360" height="46"></p></div>
       </div>
       <div class="vcard__rows">
         <div class="vcard__row"><p class="k">Email</p><p class="v v--row"><a href="mailto:oskari@summanen.org">oskari@summanen.org</a><button class="copy" type="button" id="copy-email" data-copy="oskari@summanen.org" data-what="Email address" aria-label="Copy email address" title="Copy address"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg></button></p></div>

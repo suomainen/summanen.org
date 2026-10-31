@@ -89,7 +89,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<canvas id="city"></canvas>
+<canvas id="city" aria-hidden="true"></canvas>
 <div class="air" aria-hidden="true"></div>
 <div class="bar" id="bar" aria-hidden="true"></div>
 <div class="band band--top" aria-hidden="true"></div>
@@ -99,8 +99,8 @@
 <nav class="menu" aria-label="Sivun osiot">
   <p class="menu__state" id="sys" aria-hidden="true">neljä roolia</p>
   <div class="lang" role="group" aria-label="Kieli – Language">
-    <a href="./" lang="fi" hreflang="fi" aria-current="page" aria-label="Suomeksi">FI</a>
-    <a href="en/" lang="en" hreflang="en" aria-label="In English">EN</a>
+    <a href="./" lang="fi" hreflang="fi" aria-current="page" aria-label="FI – suomeksi">FI</a>
+    <a href="en/" lang="en" hreflang="en" aria-label="EN – in English">EN</a>
   </div>
   <button class="menu__btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Valikko">
     <span class="menu__icon" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -136,7 +136,7 @@
 
   <section class="scene scene--right" data-s="1" id="arkkitehti" aria-labelledby="h-arkkitehti">
     <p class="tag">Rooli 1/4 · Järjestelmäarkkitehti</p>
-    <h2 id="h-arkkitehti" class="logo-h"><a class="logo-link" href="https://www.sitowise.com/fi" target="_blank" rel="noopener"><img src="img/sitowise-logo.webp" alt="Sitowise Oy" width="720" height="120"><span class="sr-only"> (sitowise.com, avautuu uuteen välilehteen)</span></a></h2>
+    <h2 id="h-arkkitehti" class="logo-h"><a class="logo-link" href="https://www.sitowise.com/fi" target="_blank" rel="noopener"><img src="img/sitowise-logo.webp" loading="lazy" decoding="async" alt="Sitowise Oy" width="720" height="120"><span class="sr-only"> (sitowise.com, avautuu uuteen välilehteen)</span></a></h2>
     <p class="say">Digi-liiketoiminta-alueen <span class="nw">Core Ops -tiimin</span> esihenkilönä vastaan yhteisistä palvelualustoista, kehitysympäristöistä ja käyttövaltuuksista sekä teknologian kustannuksista.</p>
     <p class="site-link"><a href="https://www.sitowise.com/fi" target="_blank" rel="noopener">sitowise.com<span class="sr-only"> (avautuu uuteen välilehteen)</span><span aria-hidden="true"> ↗</span></a></p>
     <div class="values">
@@ -149,19 +149,19 @@
 
   <section class="scene" data-s="2" id="yrittaja" aria-labelledby="h-yrittaja">
     <p class="tag">Rooli 2/4 · Yrittäjä</p>
-    <h2 id="h-yrittaja" class="logo-h"><img class="logo-summanen" src="img/summanen-logo.webp" alt="summanen.org" width="1040" height="133"></h2>
+    <h2 id="h-yrittaja" class="logo-h"><img class="logo-summanen" src="img/summanen-logo.webp" loading="lazy" decoding="async" alt="summanen.org" width="1040" height="133"></h2>
     <p class="say">Analyysi- ja automaatiotyötä <span class="nw">IT-kentällä</span> ja paikkatiedoissa. Rekisterivertailu nostaa esiin rakennukset, jotka puuttuvat rekisteristä tai ovat siellä väärin.</p>
     <div class="values">
       <div><h3>Rekisterivertailu</h3><p>Rakennus- ja verotiedot rinnakkain, puutteet karttana ja taulukkona.</p></div>
       <div><h3>Automaatio</h3><p>Toistuvat ajot ja raportit ilman käsityötä.</p></div>
       <div><h3>Offline-kartta</h3><p>Karttapalvelu yhtenä pakettina, myös kun verkko tai rajapinnat ovat poissa.</p></div>
-      <div class="partner"><div class="partner__head"><img class="partner__img" src="img/virpi-lindvall.jpg" alt="Virpi Lindvall" width="56" height="56"><div><h3>VLiNdATA Oy</h3><p class="partner__name">Virpi Lindvall</p></div></div><p>Kumppani, jonka kautta analyysit ja palvelut tarjotaan kunnille.</p><p class="more"><a href="https://vlindata.fi" target="_blank" rel="noopener">vlindata.fi<span class="sr-only"> (avautuu uuteen välilehteen)</span><span aria-hidden="true"> ↗</span></a></p></div>
+      <div class="partner"><div class="partner__head"><img class="partner__img" src="img/virpi-lindvall.jpg" loading="lazy" decoding="async" alt="Virpi Lindvall" width="56" height="56"><div><h3>VLiNdATA Oy</h3><p class="partner__name">Virpi Lindvall</p></div></div><p>Kumppani, jonka kautta analyysit ja palvelut tarjotaan kunnille.</p><p class="more"><a href="https://vlindata.fi" target="_blank" rel="noopener">vlindata.fi<span class="sr-only"> (avautuu uuteen välilehteen)</span><span aria-hidden="true"> ↗</span></a></p></div>
     </div>
   </section>
 
   <section class="scene scene--right" data-s="3" id="valtuutettu" aria-labelledby="h-valtuutettu">
     <p class="tag">Rooli 3/4 · Kaupunginvaltuutettu</p>
-    <h2 id="h-valtuutettu" class="logo-h"><a class="logo-link" href="https://www.paimio.fi" target="_blank" rel="noopener"><img class="logo-paimio" src="img/paimio-logo.webp" alt="Paimio" width="720" height="220"><span class="sr-only"> (paimio.fi, avautuu uuteen välilehteen)</span></a></h2>
+    <h2 id="h-valtuutettu" class="logo-h"><a class="logo-link" href="https://www.paimio.fi" target="_blank" rel="noopener"><img class="logo-paimio" src="img/paimio-logo.webp" loading="lazy" decoding="async" alt="Paimio" width="720" height="220"><span class="sr-only"> (paimio.fi, avautuu uuteen välilehteen)</span></a></h2>
     <p class="say">Valtuusto, ympäristölautakunta ja teknisen lautakunnan varajäsenyys vuodesta 2025. Sitä ennen 14 vuotta Paimion kaupungin IT:ssä, joten kunnan päätöksenteko, talousarvio ja vuosikello ovat tuttuja myös pöydän toiselta puolelta.</p>
     <p class="site-link"><a href="https://www.paimio.fi" target="_blank" rel="noopener">paimio.fi<span class="sr-only"> (avautuu uuteen välilehteen)</span><span aria-hidden="true"> ↗</span></a></p>
     <div class="values">
@@ -191,8 +191,8 @@
     <span class="sr-only" id="copy-status" aria-live="polite"></span>
     <div class="contact vcard">
       <div class="vcard__head">
-        <img class="vcard__img" src="img/oskari-summanen.jpg" alt="Oskari Summanen" width="88" height="88">
-        <div><p class="vcard__name">Oskari Summanen</p><p class="vcard__role"><img src="img/summanen-logo-pieni.webp" alt="summanen.org" width="360" height="46"></p></div>
+        <img class="vcard__img" src="img/oskari-summanen.jpg" loading="lazy" decoding="async" alt="Oskari Summanen" width="88" height="88">
+        <div><p class="vcard__name">Oskari Summanen</p><p class="vcard__role"><img src="img/summanen-logo-pieni.webp" loading="lazy" decoding="async" alt="summanen.org" width="360" height="46"></p></div>
       </div>
       <div class="vcard__rows">
         <div class="vcard__row"><p class="k">Sähköposti</p><p class="v v--row"><a href="mailto:oskari@summanen.org">oskari@summanen.org</a><button class="copy" type="button" id="copy-email" data-copy="oskari@summanen.org" data-what="Sähköpostiosoite" aria-label="Kopioi sähköpostiosoite" title="Kopioi osoite"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg></button></p></div>

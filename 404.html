@@ -14,13 +14,16 @@
   :root { --void: #0E1714; --ice: #F6F4EF; --ember: #E08A3C; --text-2: #D6DDD7; --muted: #A3B6AC; --line: rgba(143, 199, 180, 0.28); color-scheme: dark; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; gap: 22px;
-    padding-block: 64px; padding-left: max(16px, 7vw); padding-right: max(16px, 7vw);
+    margin: 0;
     background:
       radial-gradient(ellipse 70% 50% at 50% 100%, rgba(143, 199, 180, 0.12), transparent 70%),
       radial-gradient(ellipse 45% 35% at 80% 20%, rgba(224, 138, 60, 0.10), transparent 70%),
       var(--void);
     color: var(--ice); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 16px; line-height: 1.6;
+  }
+  main {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center; gap: 22px;
+    padding-block: 64px; padding-left: max(16px, 7vw); padding-right: max(16px, 7vw);
   }
   .brand { position: fixed; top: 22px; left: max(16px, 24px); }
   .brand img { height: 22px; width: auto; display: block; }
@@ -41,6 +44,7 @@
 </style>
 </head>
 <body>
+<main>
   <a class="brand" href="/"><img src="/img/summanen-logo-pieni.webp" alt="summanen.org, etusivulle – to the front page" width="360" height="46"></a>
   <p class="tag">Virhe 404 <span class="sep" aria-hidden="true">·</span> <span lang="en">Error 404</span></p>
   <h1>Polku katosi<br><span class="hl">metsään</span><span class="en" lang="en">The trail vanished into the woods</span></h1>
@@ -50,5 +54,6 @@
     <a class="home" href="/">← Takaisin etusivulle</a>
     <a class="home" href="/en/" lang="en">← Front page in English</a>
   </div>
+</main>
 </body>
 </html>
