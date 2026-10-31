@@ -5,7 +5,7 @@
    - Sivuston versionumero näkyy valikon alareunassa. */
 (() => {
   /* sivuston versio: nosta tätä, lisää rivi CHANGELOG.md:hen ja tee samanniminen git-tagi (ks. README) */
-  const SITE_VERSION = '1.8.0';
+  const SITE_VERSION = '1.8.1';
 
   /* teksti napin vieressä osioiden järjestyksessä (data-s / data-i), sivun kielen mukaan */
   const SECTION_LABELS = {
