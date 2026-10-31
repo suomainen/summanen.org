@@ -69,7 +69,7 @@ Sivu päivittyy noin minuutin kuluttua. Jos `git push` hylätään, koska GitHub
 Versionumero on muotoa pää.osa.korjaus (esim. 1.7.0), ja se näkyy valikon alareunassa. Kun julkaiset muutoksen:
 
 1. Nosta numeroa `js/menu.js`:n `SITE_VERSION`-kohdassa: kokonaan uusi sivu → pää, uusi osio tai ominaisuus → osa, pieni korjaus → korjaus.
-2. Lisää `CHANGELOG.md`:n alkuun uusi versio, päivämäärä ja lyhyt kuvaus muutoksista.
+2. Lisää `CHANGELOG.md`:n alkuun uusi versionumero ja lyhyt kuvaus muutoksista.
 3. Tallenna, merkitse versio ja julkaise:
 
 ```
