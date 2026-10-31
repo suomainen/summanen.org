@@ -486,6 +486,18 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
   .menu { gap: 10px; }
   .vcard__img { width: 68px; height: 68px; }
   .vcard__row { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-block: 10px; }
+
+  /* puhelimessa väljempi: lyhyemmät pikkuotsikot, enemmän riviväliä ja tilaa osien välissä */
+  .scene { gap: 24px; }
+  .tag { font-size: 11px; letter-spacing: 0.16em; line-height: 1.5; }
+  .say { line-height: 1.75; }
+  .values { row-gap: 40px; }
+  .values p { font-size: 15px; line-height: 1.7; }
+  .roles { gap: 8px; }
+  .roles a { padding: 0 16px; font-size: 13px; }
+  .lang a { min-width: 34px; padding: 0 8px; }
+  /* "Paimio" alakulmassa peittäisi tekstiä; sijainti lukee jo avausnäkymän tekstissä */
+  .hud { display: none; }
 }
 
 @media (max-width: 460px) {
