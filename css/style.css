@@ -417,6 +417,18 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
 .contact .v--nowrap { font-size: clamp(15px, 1.5vw, 19px); white-space: nowrap; overflow-wrap: normal; }
 .v--row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
 
+/* some-palveluiden logot pyöreinä nappeina, samaan tyyliin kuin kopiointinapit */
+.social { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.social__link {
+  display: grid; place-items: center;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: rgba(var(--void-rgb), 0.9); color: var(--text-2);
+  transition: border-color .2s ease, color .2s ease;
+}
+.social__link svg { width: 18px; height: 18px; }
+.social__link:hover { border-color: var(--ember); color: var(--ice); }
+
 /* kopiointinappi sähköpostin ja puhelinnumeron perässä */
 .copy {
   flex: none; display: inline-grid; place-items: center;
@@ -499,6 +511,9 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
   .menu { gap: 10px; }
   .vcard__img { width: 68px; height: 68px; }
   .vcard__row { grid-template-columns: minmax(0, 1fr); min-height: 0; padding-block: 10px; }
+  /* some-logot mahtuvat puhelimessa yhdelle riville */
+  .social { gap: 4px; }
+  .social__link { width: 40px; height: 40px; }
 
   /* puhelimessa väljempi: lyhyemmät pikkuotsikot, enemmän riviväliä ja tilaa osien välissä */
   .scene { gap: 24px; }

@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.8.0
+- Yhteystietojen LinkedIn-rivin tilalle some-rivi: LinkedIn, GitHub, Instagram, Threads, Facebook, YouTube ja Google Maps Local Guide logoina
+
 ## 1.7.1
 - Versionumero linkiksi muutoslokiin ja GitHub-logo linkiksi sivuston lähdekoodiin
 

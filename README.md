@@ -105,6 +105,7 @@ Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynn
 | `fonts/jetbrains-mono-variable.woff2` | JetBrains Mono | SIL Open Font License 1.1 |
 | `img/sitowise-logo.webp` | – | Sitowise Oy:n tavaramerkki |
 | `img/paimio-logo.webp` | – | Paimion kaupungin tunnus |
+| Some-logot yhteystiedoissa (`index.html`, `en/index.html`) | Bootstrap Icons 1.11.3; Google Maps: Simple Icons 13 | MIT (Bootstrap Icons), CC0 (Simple Icons); logot ovat palveluiden tavaramerkkejä, käytetty linkkeinä omiin profiileihin |
 | GitHub-logo valikossa (`index.html`, `en/index.html`) | Octicons 19 (mark-github) | MIT; GitHubin tavaramerkki, käytetty linkkinä omaan repoon |
 | `img/oskari-summanen.jpg`, `img/virpi-lindvall.jpg` | – | Kuvaajan tekijänoikeus, käyttö luvalla |
 
