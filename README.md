@@ -20,10 +20,13 @@ llms.txt              tiivistelmä tekoälyhakukoneille ja kielimalleille
 sitemap.xml           sivukartta hakukoneille
 css/
   fonts.css           @font-face-määrittelyt
-  style.css           sivun tyylit ja väritokenit (:root)
+  style.css           sivun tyylit (osiot numeroitu, värit muuttujina :root-lohkossa)
 js/
   consent.js          evästeilmoitus ja Google Analytics 4
-  main.js             3D-metsä, vieritysanimaatiot, valikko ja kopiointinapit
+  forest.js           3D-metsä (asetukset tiedoston alussa)
+  animations.js       vieritysanimaatiot, edistymispalkki ja 3D-metsän käynnistys
+  menu.js             valikko ja nykyisen osion seuranta
+  copy.js             sähköpostin ja puhelinnumeron kopiointinapit
   vendor/             kolmannen osapuolen kirjastot (ei muokata)
 fonts/                fonttitiedostot (woff2)
 img/                  logot (WebP), henkilökuvat ja jakokuva (og-kuva.jpg)
@@ -41,9 +44,10 @@ python -m http.server
 ## Muokkaaminen
 
 - **Tekstit:** `index.html`. Jokainen rooli on oma `<section>`-osionsa, ja sen alla olevat laatikot ovat `.values`-elementin sisällä.
-- **Värit ja fontit:** `css/style.css`-tiedoston alussa olevat muuttujat (`--void`, `--ember`, `--ice` jne.).
-- **3D-metsä ja kameran reitti:** `js/main.js`, taulukko `keys`.
-- **Valikon roolitekstit** oikeassa ylänurkassa: `js/main.js`, taulukko `states`.
+- **Värit ja fontit:** `css/style.css`, kohta 1. Läpinäkyvät sävyt käyttävät rgb-muuttujia, esim. `rgba(var(--ember-rgb), 0.3)`.
+- **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit ja kameran pysähdyspaikat (yksi per osio).
+- **3D-metsän käynnistysviive:** `js/animations.js`, `FOREST_FALLBACK_MS`.
+- **Valikon roolitekstit** oikeassa ylänurkassa: `js/menu.js`, `SECTION_LABELS`.
 - Kun sivuun tehdään isompia muutoksia, päivitä `sitemap.xml`:n `lastmod`-päivämäärä.
 
 ## Julkaisu
@@ -68,7 +72,7 @@ Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta: kirjastot ja fontit o
 
 ## Suorituskyky
 
-Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynnistyy vasta, kun sivu on latautunut ja kävijä vierittää tai liikuttaa hiirtä, tai viimeistään kuuden sekunnin kuluttua. Piirtäminen pysähtyy, kun välilehti on piilossa, ja puhelimessa puita on vähemmän ja piirtotarkkuus matalampi.
+Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynnistyy vasta, kun sivu on latautunut ja kävijä vierittää tai liikuttaa hiirtä, tai viimeistään kuuden sekunnin kuluttua. Metsä piirretään 30 kertaa sekunnissa, piirtäminen pysähtyy kun välilehti on piilossa, ja puhelimessa puita on vähemmän ja piirtotarkkuus matalampi.
 
 ## Kolmannen osapuolen tiedostot ja oikeudet
 
