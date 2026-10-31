@@ -8,7 +8,8 @@ Oskari Summasen henkilö- ja yrityssivu: järjestelmäarkkitehti, yrittäjä, ka
 ## Rakenne
 
 ```
-index.html            sivun sisältö
+index.html            sivun sisältö suomeksi (ensisijainen kieli)
+en/index.html         sama sivu englanniksi (polut ../css, ../js, ../img)
 404.html              "sivua ei löytynyt" -sivu
 CNAME                 GitHub Pagesin verkkotunnus (älä poista)
 favicon.ico           selainvälilehden kuvake (16/32/48 px)
@@ -43,6 +44,7 @@ python -m http.server
 
 ## Muokkaaminen
 
+- **Kieliversiot:** suomi on `index.html` ja englanti `en/index.html`. Kun muutat tekstiä, muuta se molempiin. Kielivalinta FI / EN on yläreunassa valikkonapin vieressä. Sivut on linkitetty toisiinsa hakukoneille (`hreflang`), ja skriptien tekstit valitaan sivun `lang`-määrityksen mukaan (`js/menu.js`, `js/copy.js`).
 - **Tekstit:** `index.html`. Jokainen rooli on oma `<section>`-osionsa, ja sen alla olevat laatikot ovat `.values`-elementin sisällä.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Läpinäkyvät sävyt käyttävät rgb-muuttujia, esim. `rgba(var(--ember-rgb), 0.3)`.
 - **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit ja kameran pysähdyspaikat (yksi per osio).

@@ -3,15 +3,12 @@
    - Esc, klikkaus valikon ulkopuolelle tai fokuksen siirtyminen pois sulkee valikon.
    - Nykyinen osio näkyy napin vieressä ja valikossa (aria-current). */
 (() => {
-  /* teksti napin vieressä, osioiden järjestyksessä (data-s / data-i) */
-  const SECTION_LABELS = [
-    'neljä roolia',
-    'rooli 1/4 · arkkitehti',
-    'rooli 2/4 · yrittäjä',
-    'rooli 3/4 · valtuutettu',
-    'rooli 4/4 · isä',
-    'yhteys · auki',
-  ];
+  /* teksti napin vieressä osioiden järjestyksessä (data-s / data-i), sivun kielen mukaan */
+  const SECTION_LABELS = {
+    fi: ['neljä roolia', 'rooli 1/4 · arkkitehti', 'rooli 2/4 · yrittäjä', 'rooli 3/4 · valtuutettu', 'rooli 4/4 · isä', 'yhteys · auki'],
+    en: ['four roles', 'role 1/4 · architect', 'role 2/4 · entrepreneur', 'role 3/4 · councillor', 'role 4/4 · father', 'contact · open'],
+  };
+  const labels = SECTION_LABELS[document.documentElement.lang] || SECTION_LABELS.fi;
   /* osio on aktiivinen, kun sen yläreuna on ohittanut tämän kohdan näytön korkeudesta */
   const ACTIVE_LINE = 0.4;
   /* viive ennen kuin hiirellä avattu valikko sulkeutuu, kun hiiri lähtee */
@@ -81,7 +78,7 @@
 
   const setActive = (index) => {
     activeIndex = index;
-    stateLabel.textContent = SECTION_LABELS[index] || SECTION_LABELS[0];
+    stateLabel.textContent = labels[index] || labels[0];
     links.forEach((a) => {
       if (Number(a.dataset.i) === index) a.setAttribute('aria-current', 'location');
       else a.removeAttribute('aria-current');

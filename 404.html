@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="color-scheme" content="dark">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sivua ei löytynyt – summanen.org</title>
+<title>Sivua ei löytynyt – Page not found – summanen.org</title>
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0E1714">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -28,8 +28,9 @@
   h1 { margin: 0; font-family: 'Archivo', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: 118%; font-size: clamp(44px, 10vw, 120px); line-height: 0.94; letter-spacing: -0.04em; text-wrap: balance; }
   h1 span { color: var(--ember); text-shadow: 0 0 30px rgba(224, 138, 60, 0.35); }
   p.say { margin: 0; max-width: 46ch; color: var(--text-2); font-size: clamp(15px, 1.7vw, 19px); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
   a.home {
-    align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 20px;
+    display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 20px;
     border: 1px solid var(--line); border-radius: 999px; color: var(--ice); text-decoration: none; letter-spacing: 0.04em;
   }
   a.home:hover { border-color: var(--ember); }
@@ -41,6 +42,10 @@
   <p class="tag">Virhe 404</p>
   <h1>Polku katosi<br><span>metsään</span></h1>
   <p class="say">Hakemaasi sivua ei löytynyt. Se on voinut siirtyä, tai osoitteessa on kirjoitusvirhe.</p>
-  <a class="home" href="/">← Takaisin etusivulle</a>
+  <p class="say" lang="en">The page you were looking for was not found. It may have moved, or there is a typo in the address.</p>
+  <div class="links">
+    <a class="home" href="/">← Takaisin etusivulle</a>
+    <a class="home" href="/en/" lang="en">← Back to the English front page</a>
+  </div>
 </body>
 </html>

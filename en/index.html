@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script src="../js/consent.js" defer></script>
+<meta name="color-scheme" content="dark">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Oskari Summanen, Paimio, Finland. Systems architect, entrepreneur, city councillor and father. Geospatial data, automation and SDLC, 20+ years in IT.">
+<title>Oskari Summanen – geospatial, data, automation and SDLC</title>
+<link rel="canonical" href="https://summanen.org/en/">
+<link rel="alternate" hreflang="fi" href="https://summanen.org/">
+<link rel="alternate" hreflang="en" href="https://summanen.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://summanen.org/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Oskari Summanen">
+<meta name="theme-color" content="#0E1714">
+
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="summanen.org">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fi_FI">
+<meta property="og:url" content="https://summanen.org/en/">
+<meta property="og:title" content="Oskari Summanen – geospatial, data, automation and SDLC">
+<meta property="og:description" content="Oskari Summanen, Paimio, Finland. Systems architect, entrepreneur, city councillor and father. Geospatial data, automation and SDLC, 20+ years in IT.">
+<meta property="og:image" content="https://summanen.org/img/og-kuva-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="summanen.org – Four roles, one approach. Oskari Summanen, Paimio, Finland.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oskari Summanen – geospatial, data, automation and SDLC">
+<meta name="twitter:description" content="Oskari Summanen, Paimio, Finland. Systems architect, entrepreneur, city councillor and father. Geospatial data, automation and SDLC, 20+ years in IT.">
+<meta name="twitter:image" content="https://summanen.org/img/og-kuva-en.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://summanen.org/en/#website",
+      "url": "https://summanen.org/en/",
+      "name": "summanen.org",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://summanen.org/#oskari"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://summanen.org/#oskari",
+      "name": "Oskari Summanen",
+      "url": "https://summanen.org/",
+      "image": "https://summanen.org/img/oskari-summanen.jpg",
+      "jobTitle": "Systems Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sitowise Oy",
+        "url": "https://www.sitowise.com/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paimio",
+        "addressRegion": "Southwest Finland",
+        "addressCountry": "FI"
+      },
+      "knowsAbout": [
+        "Geospatial data",
+        "Data",
+        "Automation",
+        "Artificial intelligence",
+        "Register comparison"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/oskarisummanen",
+        "https://www.instagram.com/suomainen"
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" href="../fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/jetbrains-mono-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/fonts.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<canvas id="city"></canvas>
+<div class="air" aria-hidden="true"></div>
+<div class="bar" id="bar" aria-hidden="true"></div>
+<div class="band band--top" aria-hidden="true"></div>
+<div class="band band--bottom" aria-hidden="true"></div>
+
+<a class="brand-home" href="#start"><img src="../img/summanen-logo-pieni.webp" alt="summanen.org, back to top" width="360" height="46"></a>
+<nav class="menu" aria-label="Page sections">
+  <p class="menu__state" id="sys" aria-hidden="true">four roles</p>
+  <div class="lang" role="group" aria-label="Kieli – Language">
+    <a href="../" lang="fi" hreflang="fi" aria-label="Suomeksi">FI</a>
+    <a href="./" lang="en" hreflang="en" aria-current="page" aria-label="In English">EN</a>
+  </div>
+  <button class="menu__btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Menu">
+    <span class="menu__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+  <ol class="menu__list" id="menu-list" hidden>
+    <li><a href="#start" data-i="0"><span>·</span>Start</a></li>
+    <li><a href="#architect" data-i="1"><span>1/4</span>Systems Architect</a></li>
+    <li><a href="#entrepreneur" data-i="2"><span>2/4</span>Entrepreneur</a></li>
+    <li><a href="#councillor" data-i="3"><span>3/4</span>City Councillor</a></li>
+    <li><a href="#father" data-i="4"><span>4/4</span>Father</a></li>
+    <li class="menu__sep"><a href="#contact" data-i="5"><span>→</span>Contact</a></li>
+    <li class="menu__sep"><button type="button" id="consent-open"><span>·</span>Cookies</button></li>
+  </ol>
+</nav>
+<p class="hud hud--bl" aria-hidden="true">Paimio<span class="hud-coords"> · 60.46° N 22.69° E · ETRS-TM35FIN</span></p>
+<p class="cue" id="cue" aria-hidden="true">Scroll</p>
+
+<main>
+
+  <section class="scene" data-s="0" id="start" aria-labelledby="h-top">
+    <p class="tag">Geospatial · Data · Automation · SDLC</p>
+    <h1 id="h-top">Four roles,<br><span class="glow">one approach</span></h1>
+    <p class="say">Oskari Summanen, Paimio, Finland. Systems architect, entrepreneur, city councillor and father of three teenage sons. Over 20 years in IT and over 10 years in geospatial data.</p>
+    <nav aria-label="Roles">
+      <ul class="roles">
+        <li><a href="#architect"><span>1/4</span>Systems Architect</a></li>
+        <li><a href="#entrepreneur"><span>2/4</span>Entrepreneur</a></li>
+        <li><a href="#councillor"><span>3/4</span>City Councillor</a></li>
+        <li><a href="#father"><span>4/4</span>Father</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section class="scene scene--right" data-s="1" id="architect" aria-labelledby="h-architect">
+    <p class="tag">Role 1/4 · Systems Architect</p>
+    <h2 id="h-architect" class="logo-h"><a class="logo-link" href="https://www.sitowise.com/" target="_blank" rel="noopener"><img src="../img/sitowise-logo.webp" alt="Sitowise Oy" width="720" height="120"><span class="sr-only"> (sitowise.com, opens in a new tab)</span></a></h2>
+    <p class="say">As team lead of the <span class="nw">Core Ops</span> team in the Digi business area, I am responsible for shared service platforms, development environments and access rights, as well as technology costs.</p>
+    <p class="site-link"><a href="https://www.sitowise.com/" target="_blank" rel="noopener">sitowise.com<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p>
+    <div class="values">
+      <div><h3>AI solutions</h3><p>Deploying and managing AI solutions.</p><p class="more"><a href="https://www.sitowise.com/fi/tekoaly-kunnille" target="_blank" rel="noopener">AI for municipalities (in Finnish)<span class="sr-only"> (Sitowise, opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p></div>
+      <div><h3>Governance</h3><p>Access rights, plus security and quality governance.</p></div>
+      <div><h3>Costs</h3><p>Technology costs and licences under control.</p></div>
+      <div><h3>Digi Techboard</h3><p>Chair. Development and deployment projects in Finland and Sweden.</p></div>
+    </div>
+  </section>
+
+  <section class="scene" data-s="2" id="entrepreneur" aria-labelledby="h-entrepreneur">
+    <p class="tag">Role 2/4 · Entrepreneur</p>
+    <h2 id="h-entrepreneur" class="logo-h"><img class="logo-summanen" src="../img/summanen-logo.webp" alt="summanen.org" width="1040" height="133"></h2>
+    <p class="say">Analysis and automation work in IT and geospatial data. Register comparison brings to light buildings that are missing from the register or recorded incorrectly.</p>
+    <div class="values">
+      <div><h3>Register comparison</h3><p>Building and tax data side by side, with the gaps shown as a map and a table.</p></div>
+      <div><h3>Automation</h3><p>Recurring runs and reports without manual work.</p></div>
+      <div><h3>Offline map</h3><p>A map service in a single package that works even when the network or interfaces are down.</p></div>
+      <div class="partner"><div class="partner__head"><img class="partner__img" src="../img/virpi-lindvall.jpg" alt="Virpi Lindvall" width="56" height="56"><div><h3>VLiNdATA Oy</h3><p class="partner__name">Virpi Lindvall</p></div></div><p>Partner through which the analyses and services are offered to municipalities.</p><p class="more"><a href="https://vlindata.fi" target="_blank" rel="noopener">vlindata.fi<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p></div>
+    </div>
+  </section>
+
+  <section class="scene scene--right" data-s="3" id="councillor" aria-labelledby="h-councillor">
+    <p class="tag">Role 3/4 · City Councillor</p>
+    <h2 id="h-councillor" class="logo-h"><a class="logo-link" href="https://www.paimio.fi" target="_blank" rel="noopener"><img class="logo-paimio" src="../img/paimio-logo.webp" alt="Paimio" width="720" height="220"><span class="sr-only"> (paimio.fi, opens in a new tab)</span></a></h2>
+    <p class="say">Member of the city council and the environmental board, and deputy member of the technical board, since 2025. Before that, 14 years in the City of Paimio’s IT, so municipal decision-making, budgeting and the annual planning cycle are familiar from the other side of the table too.</p>
+    <p class="site-link"><a href="https://www.paimio.fi" target="_blank" rel="noopener">paimio.fi<span class="sr-only"> (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p>
+    <div class="values">
+      <div><h3>Elected positions</h3><p>City council, environmental board and technical board since 2025.</p></div>
+      <div><h3>Volunteering</h3><p>Youth work, trade fairs, competitions and other events since the 1990s.</p></div>
+      <div><h3>IT management</h3><p>City of Paimio IT administration 2010–2023, most recently as Principal ICT Planner.</p></div>
+      <div><h3>Party</h3><p>SDP (Social Democrats). Member of the local Social Democratic group and its board.</p></div>
+    </div>
+  </section>
+
+  <section class="scene" data-s="4" id="father" aria-labelledby="h-father">
+    <p class="tag">Role 4/4 · Father</p>
+    <h2 id="h-father">Three teenage<br><span class="glow">sons</span></h2>
+    <p class="say">The most important of the four roles.</p>
+    <div class="values">
+      <div><h3>Outdoors</h3><p>Together in the forest and on the water, at our own bases, the cottage and the kota hut. We take to the water by packraft.</p><p class="more"><a href="https://www.instagram.com/suomainen" target="_blank" rel="noopener">@suomainen<span class="sr-only"> on Instagram (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></p></div>
+      <div><h3>Everyday life</h3><p>School, hobbies and meal times. The boys are independent, and everyday life is calm and pleasant, sauna included.</p></div>
+      <div><h3>Gaming</h3><p>Games together on screen and around the table. The most hilarious one is <a class="inline" href="https://www.explodingkittens.com/pages/how-to-play-exploding-kittens-nsfw-edition" target="_blank" rel="noopener">Exploding Kittens</a>, and for adventure there is <a class="inline" href="https://www.valheimgame.com/" target="_blank" rel="noopener">Valheim</a>.</p></div>
+      <div><h3>Time together</h3><p>What the other roles are not allowed to take. Weekends belong first and foremost to adventures.</p></div>
+    </div>
+  </section>
+
+  <section class="scene scene--contact" data-s="5" id="contact" aria-labelledby="h-contact">
+    <p class="tag">Contact</p>
+    <h2 id="h-contact">Let’s get<br><span class="glow">in touch</span></h2>
+    <p class="say">Analysis, automation or a map that works offline, and AI where it genuinely helps. Tell me about your situation and we will work out together where to start.</p>
+    <span class="sr-only" id="copy-status" aria-live="polite"></span>
+    <div class="contact vcard">
+      <div class="vcard__head">
+        <img class="vcard__img" src="../img/oskari-summanen.jpg" alt="Oskari Summanen" width="88" height="88">
+        <div><p class="vcard__name">Oskari Summanen</p><p class="vcard__role"><img src="../img/summanen-logo-pieni.webp" alt="summanen.org" width="360" height="46"></p></div>
+      </div>
+      <div class="vcard__rows">
+        <div class="vcard__row"><p class="k">Email</p><p class="v v--row"><a href="mailto:oskari@summanen.org">oskari@summanen.org</a><button class="copy" type="button" id="copy-email" data-copy="oskari@summanen.org" data-what="Email address" aria-label="Copy email address" title="Copy address"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg></button></p></div>
+        <div class="vcard__row"><p class="k">Phone</p><p class="v v--row"><a href="tel:+358505594333">+358 50 559 4333</a><button class="copy" type="button" id="copy-phone" data-copy="+358 50 559 4333" data-what="Phone number" aria-label="Copy phone number" title="Copy number"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M15 9V6.5A2.5 2.5 0 0 0 12.5 4h-6A2.5 2.5 0 0 0 4 6.5v6A2.5 2.5 0 0 0 6.5 15H9"/></svg></button></p></div>
+        <div class="vcard__row"><p class="k">LinkedIn</p><p class="v v--nowrap"><a href="https://www.linkedin.com/in/oskarisummanen" target="_blank" rel="noopener">linkedin.com/in/oskarisummanen</a></p></div>
+        <div class="vcard__row"><p class="k">Location</p><p class="v"><a href="https://kartta.paimio.fi/" target="_blank" rel="noopener">Paimio, Southwest Finland</a></p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="consent" id="consent" role="region" aria-labelledby="consent-title" hidden>
+  <p class="consent__title" id="consent-title">Cookies</p>
+  <p class="consent__text">I use Google Analytics to see how many people visit the site. Tracking starts only if you accept it. You can change your choice at any time from Cookies in the menu.</p>
+  <div class="consent__actions">
+    <button type="button" class="consent__btn consent__btn--primary" id="consent-accept">Accept</button>
+    <button type="button" class="consent__btn" id="consent-reject">Decline</button>
+  </div>
+</section>
+
+<script src="../js/vendor/three.min.js" defer></script>
+<script src="../js/vendor/gsap.min.js" defer></script>
+<script src="../js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="../js/forest.js" defer></script>
+<script src="../js/copy.js" defer></script>
+<script src="../js/menu.js" defer></script>
+<script src="../js/animations.js" defer></script>
+</body>
+</html>
