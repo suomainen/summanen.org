@@ -26,7 +26,10 @@
   .brand img { height: 22px; width: auto; display: block; }
   .tag { margin: 0; font-size: 12.5px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ember); }
   h1 { margin: 0; font-family: 'Archivo', 'Arial Narrow', sans-serif; font-weight: 800; font-stretch: 118%; font-size: clamp(44px, 10vw, 120px); line-height: 0.94; letter-spacing: -0.04em; text-wrap: balance; }
-  h1 span { color: var(--ember); text-shadow: 0 0 30px rgba(224, 138, 60, 0.35); }
+  h1 .hl { color: var(--ember); text-shadow: 0 0 30px rgba(224, 138, 60, 0.35); }
+  /* englanninkielinen otsikko pienempänä suomenkielisen alla */
+  h1 .en { display: block; margin-top: 0.45em; font-size: 0.36em; line-height: 1.05; letter-spacing: -0.02em; color: var(--text-2); }
+  .tag .sep { color: var(--muted); }
   p.say { margin: 0; max-width: 46ch; color: var(--text-2); font-size: clamp(15px, 1.7vw, 19px); }
   .links { display: flex; flex-wrap: wrap; gap: 10px; }
   a.home {
@@ -38,14 +41,14 @@
 </style>
 </head>
 <body>
-  <a class="brand" href="/"><img src="/img/summanen-logo-pieni.webp" alt="summanen.org, etusivulle" width="360" height="46"></a>
-  <p class="tag">Virhe 404</p>
-  <h1>Polku katosi<br><span>metsään</span></h1>
+  <a class="brand" href="/"><img src="/img/summanen-logo-pieni.webp" alt="summanen.org, etusivulle – to the front page" width="360" height="46"></a>
+  <p class="tag">Virhe 404 <span class="sep" aria-hidden="true">·</span> <span lang="en">Error 404</span></p>
+  <h1>Polku katosi<br><span class="hl">metsään</span><span class="en" lang="en">The trail vanished into the woods</span></h1>
   <p class="say">Hakemaasi sivua ei löytynyt. Se on voinut siirtyä, tai osoitteessa on kirjoitusvirhe.</p>
   <p class="say" lang="en">The page you were looking for was not found. It may have moved, or there is a typo in the address.</p>
   <div class="links">
     <a class="home" href="/">← Takaisin etusivulle</a>
-    <a class="home" href="/en/" lang="en">← Back to the English front page</a>
+    <a class="home" href="/en/" lang="en">← Front page in English</a>
   </div>
 </body>
 </html>
