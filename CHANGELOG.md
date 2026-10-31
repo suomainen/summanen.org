@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.7.1 – 31.10.2026
+- Versionumero linkiksi muutoslokiin ja GitHub-logo linkiksi sivuston lähdekoodiin
+
 ## 1.7.0 – 31.10.2026
 - Versionumero valikon alareunaan
 - Muutosloki (tämä tiedosto) ja git-tagit myös aiemmille versioille

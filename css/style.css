@@ -227,13 +227,17 @@ button:focus-visible { outline: 2px solid var(--ember); outline-offset: 4px; bor
 }
 
 
-/* versionumero valikon alareunassa */
-.menu__list .menu__version {
-  padding: 10px 14px 4px;
-  font-size: 11px; letter-spacing: 0.14em;
+/* alareuna: versionumero (linkki muutoslokiin) ja GitHub-logo (linkki lähdekoodiin) */
+.menu__list .menu__meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
+.menu__list .menu__meta a {
+  min-height: 44px; padding: 0 14px;
+  font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: 0.14em;
   color: var(--muted);
 }
-.menu__list .menu__version:empty { display: none; }
+.menu__list .menu__meta a span:not(.sr-only) { width: auto; font-size: inherit; color: inherit; }
+.menu__list .menu__meta a:hover { color: var(--ice); }
+.menu__list .menu__gh { justify-content: center; width: 44px; padding: 0; }
+.menu__gh svg { width: 18px; height: 18px; }
 
 
 /* 4. Osiot ja otsikot ------------------------------------------------------- */

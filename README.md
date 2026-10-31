@@ -51,7 +51,7 @@ python -m http.server
 - **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit ja kameran pysähdyspaikat (yksi per osio).
 - **3D-metsän käynnistysviive:** `js/animations.js`, `FOREST_FALLBACK_MS`.
 - **Valikon roolitekstit** oikeassa ylänurkassa: `js/menu.js`, `SECTION_LABELS`.
-- **Versionumero** valikon alareunassa: `js/menu.js`, `SITE_VERSION` (ks. Versiointi).
+- **Versionumero** valikon alareunassa: `js/menu.js`, `SITE_VERSION` (ks. Versiointi). Numero on linkki GitHubin muutoslokiin, ja sen vieressä oleva GitHub-logo vie repoon.
 - Kun sivuun tehdään isompia muutoksia, päivitä `sitemap.xml`:n `lastmod`-päivämäärä.
 
 ## Julkaisu
@@ -105,6 +105,7 @@ Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynn
 | `fonts/jetbrains-mono-variable.woff2` | JetBrains Mono | SIL Open Font License 1.1 |
 | `img/sitowise-logo.webp` | – | Sitowise Oy:n tavaramerkki |
 | `img/paimio-logo.webp` | – | Paimion kaupungin tunnus |
+| GitHub-logo valikossa (`index.html`, `en/index.html`) | Octicons 19 (mark-github) | MIT; GitHubin tavaramerkki, käytetty linkkinä omaan repoon |
 | `img/oskari-summanen.jpg`, `img/virpi-lindvall.jpg` | – | Kuvaajan tekijänoikeus, käyttö luvalla |
 
 Sivun omat tekstit, kuvat ja koodi: © Oskari Summanen. Kaikki oikeudet pidätetään.
