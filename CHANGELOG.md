@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.8.4
+- Uusi kuva yhteystietoihin
+
 ## 1.8.3
 - Some-logoille enemmän tilaa ympärille
 
