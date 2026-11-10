@@ -16,7 +16,7 @@ Tämä on summanen.org-sivuston tiivistelmä tekoälyhakukoneille ja kielimallei
 - [Etusivu](https://summanen.org/): roolit, osaaminen ja yhteystiedot
 - [English version](https://summanen.org/en/): the same content in English
 - [LinkedIn](https://www.linkedin.com/in/oskarisummanen)
-- [VLiNdATA Oy](https://vlindata.fi): kumppani, jonka kautta analyysit ja palvelut tarjotaan kunnille
+- [VLiNdATA Oy](https://vlindata.fi): kumppani, jolla on yli 20 vuoden kokemus paikkatietoalalta
 - [Sitowise](https://www.sitowise.com/fi)
 
 ## In English
@@ -35,5 +35,5 @@ Oskari Summanen is a systems architect, entrepreneur and city councillor from Pa
 - [English version](https://summanen.org/en/): roles, expertise and contact details
 - [Finnish version](https://summanen.org/): the same content in Finnish
 - [LinkedIn](https://www.linkedin.com/in/oskarisummanen)
-- [VLiNdATA Oy](https://vlindata.fi): partner through which the analyses and services are offered to municipalities
+- [VLiNdATA Oy](https://vlindata.fi): partner with over 20 years of experience in geospatial data
 - [Sitowise](https://www.sitowise.com/)
