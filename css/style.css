@@ -45,7 +45,9 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* Pehmeä vieritys tehdään js/menu.js:ssä. CSS:n scroll-behavior: smooth sotkisi GSAP ScrollTriggerin
+   mittaukset, kun ikkunan koko muuttuu, ja 3D-tausta jäisi paikalleen. */
+[tabindex="-1"]:focus { outline: none; }
 
 body {
   margin: 0;
@@ -547,7 +549,6 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
 
 /* käyttäjä on pyytänyt vähemmän liikettä: ei 3D-metsää, ei liukumia eikä animaatioita */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   #city, .cue { display: none; }
   .scene { min-height: 0; padding: 72px 7vw; }
   .menu__list:not([hidden]) { animation: none; }

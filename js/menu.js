@@ -5,7 +5,7 @@
    - Sivuston versionumero näkyy valikon alareunassa. */
 (() => {
   /* sivuston versio: nosta tätä, lisää rivi CHANGELOG.md:hen ja tee samanniminen git-tagi (ks. README) */
-  const SITE_VERSION = '1.9.0';
+  const SITE_VERSION = '1.9.1';
 
   /* teksti napin vieressä osioiden järjestyksessä (data-s / data-i), sivun kielen mukaan */
   const SECTION_LABELS = {
@@ -111,4 +111,22 @@
   }, { passive: true });
   addEventListener('resize', checkActive);
   checkActive();
+
+  /* ---- sisäiset linkit (#osio) ---- */
+
+  /* Vieritetään pehmeästi JavaScriptillä. CSS:n scroll-behavior: smooth ei käy, koska se sotkee
+     ScrollTriggerin mittaukset ikkunan koon muuttuessa ja 3D-tausta lakkaa liikkumasta. */
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+    history.pushState(null, '', link.hash);
+    /* näppäimistön kohdistus siirtyy osioon, kuten tavallisessa ankkurilinkissä */
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  });
 })();

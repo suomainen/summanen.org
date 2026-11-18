@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.9.1
+- Korjaus: 3D-tausta jäi paikalleen, kun selaimen ikkunan kokoa muutettiin (pehmeä vieritys nyt JavaScriptillä)
+
 ## 1.9.0
 - 3D-metsään himmeä oranssi polku kameran reitille
 - Polun päähän kota, jonka edessä nuotio syttyy, kun sivu vieritetään loppuun
