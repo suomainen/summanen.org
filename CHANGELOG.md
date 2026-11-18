@@ -8,6 +8,10 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.8.6
+- Fontit kiinteiksi tiedostoiksi, jotta ne näkyvät oikein myös vanhemmissa iPhoneissa (ulkoasu ennallaan)
+- Varafontiksi Menlo tasalevyiselle tekstille
+
 ## 1.8.5
 - VLiNdATA-laatikon teksti: kumppani, jolla on yli 20 vuoden kokemus paikkatietoalalta
 

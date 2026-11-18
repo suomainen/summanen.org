@@ -35,8 +35,10 @@
   --line: rgba(var(--mint-rgb), 0.28);
 
   /* fontit */
-  --display: 'Archivo', 'Arial Narrow', 'Helvetica Neue', sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --display-wide: 'Archivo Expanded', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --display-name: 'Archivo SemiExpanded', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
 
   color-scheme: dark;
 }
@@ -275,7 +277,7 @@ main { position: relative; z-index: 4; overflow-x: clip; }
 
 h1, h2 {
   margin: 0;
-  font-family: var(--display); font-weight: 800; font-stretch: 118%;
+  font-family: var(--display-wide); font-weight: 800;
   line-height: 0.94; letter-spacing: -0.04em;
   text-wrap: balance;
 }
@@ -390,7 +392,7 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
 
 .contact p { margin: 0; }
 .vcard__name {
-  font-family: var(--display); font-weight: 800; font-stretch: 112%;
+  font-family: var(--display-name); font-weight: 800;
   font-size: clamp(22px, 2.6vw, 30px); line-height: 1.1; letter-spacing: -0.02em;
 }
 .contact .vcard__role { display: flex; align-items: center; gap: 10px; margin-top: 8px; }

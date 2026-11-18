@@ -101,8 +101,8 @@ Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynn
 |---|---|---|
 | `js/vendor/three.min.js` | three.js r128 | MIT |
 | `js/vendor/gsap.min.js`, `ScrollTrigger.min.js` | GSAP 3.12.5 | GSAP Standard License (maksuton) |
-| `fonts/archivo-variable.woff2` | Archivo | SIL Open Font License 1.1 |
-| `fonts/jetbrains-mono-variable.woff2` | JetBrains Mono | SIL Open Font License 1.1 |
+| `fonts/archivo-*.woff2` (4 tiedostoa) | Archivo | SIL Open Font License 1.1 |
+| `fonts/jetbrains-mono-*.woff2` (2 tiedostoa) | JetBrains Mono | SIL Open Font License 1.1 |
 | `img/sitowise-logo.webp` | – | Sitowise Oy:n tavaramerkki |
 | `img/paimio-logo.webp` | – | Paimion kaupungin tunnus |
 | Some-logot yhteystiedoissa (`index.html`, `en/index.html`) | Bootstrap Icons 1.11.3; Google Maps: Simple Icons 13; drone: Phosphor Icons 2 | MIT (Bootstrap Icons, Phosphor Icons), CC0 (Simple Icons); logot ovat palveluiden tavaramerkkejä, käytetty linkkeinä omiin profiileihin |
