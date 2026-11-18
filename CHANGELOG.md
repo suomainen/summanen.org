@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.9.2
+- 3D-metsä näkyy paremmin puhelimissa: laajempi kuvakulma pystynäytöllä, tiheämpi metsä polun lähellä ja kevyempi tekstien taustahäivytys
+
 ## 1.9.1
 - Korjaus: 3D-tausta jäi paikalleen, kun selaimen ikkunan kokoa muutettiin (pehmeä vieritys nyt JavaScriptillä)
 

@@ -8,12 +8,14 @@
 (() => {
   /* ---- Asetukset: säädä metsää näistä ---- */
   const SETTINGS = {
-    trees: { desktop: 520, mobile: 240 },   /* puiden yritysmäärä (osa jää pois kameran reitiltä) */
+    trees: { desktop: 520, mobile: 300 },   /* puiden yritysmäärä (osa jää pois kameran reitiltä) */
+    spread: { desktop: 48, mobile: 30 },    /* puiden alue polun molemmin puolin; kapeammalla näytöllä tiheämpi */
     pixelRatio: { desktop: 1.5, mobile: 1 }, /* piirtotarkkuuden yläraja */
     fps: 30,                                /* piirtokertoja sekunnissa */
     spruceShare: 0.75,                      /* kuusten osuus, loput mäntyjä */
     treeHeight: [3.5, 10],                  /* puun korkeus min–max */
-    clearing: 8,                            /* puuton käytävä kameran reitin ympärillä */
+    clearing: { desktop: 8, mobile: 4.5 },  /* puuton käytävä kameran reitin ympärillä */
+    fov: { landscape: 58, portrait: 74 },   /* kuvakulma pystysuunnassa; pystynäytöllä laajempi, jotta metsää näkyy sivuilla */
     pulses: 8,                              /* valopulssien määrä */
     dust: 1800,                             /* ilmassa leijuvia hiukkasia */
     fog: 0.02,                              /* sumun tiheys */
@@ -74,7 +76,7 @@
 
   /* Kaikki puut kootaan kahdeksi geometriaksi (rungot ja reunaviivat),
      jolloin satoja puita piirretään kahdella piirtokomennolla. */
-  const buildForest = (treeCount) => {
+  const buildForest = (treeCount, spread, clearing) => {
     const { ground, colors } = SETTINGS;
     const unitShapes = [
       new THREE.ConeGeometry(1, 1, 7, 1),       /* kuusen kerros */
@@ -108,9 +110,9 @@
 
     const treeTops = [];
     for (let n = 0; n < treeCount; n++) {
-      const x = rand(-48, 48);
+      const x = rand(-spread, spread);
       const z = rand(-202, 28);
-      if (distanceToCameraPath(x, z) < SETTINGS.clearing) continue;
+      if (distanceToCameraPath(x, z) < clearing) continue;
 
       const h = rand(...SETTINGS.treeHeight);
       const rotation = Math.random() * Math.PI;
@@ -392,12 +394,13 @@
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(SETTINGS.colors.background, SETTINGS.fog);
 
-    const camera = new THREE.PerspectiveCamera(58, innerWidth / innerHeight, 0.1, 400);
+    const camera = new THREE.PerspectiveCamera(SETTINGS.fov.landscape, innerWidth / innerHeight, 0.1, 400);
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'low-power' });
     renderer.setPixelRatio(Math.min(devicePixelRatio || 1, small ? SETTINGS.pixelRatio.mobile : SETTINGS.pixelRatio.desktop));
 
     const grid = buildGround(scene);
-    const { forest, treeTops } = buildForest(small ? SETTINGS.trees.mobile : SETTINGS.trees.desktop);
+    const size = small ? 'mobile' : 'desktop';
+    const { forest, treeTops } = buildForest(SETTINGS.trees[size], SETTINGS.spread[size], SETTINGS.clearing[size]);
     const kota = buildKota();
     forest.add(kota.group);
     scene.add(forest, buildReflection(forest));
@@ -408,6 +411,7 @@
 
     const resize = () => {
       camera.aspect = innerWidth / innerHeight;
+      camera.fov = camera.aspect < 1 ? SETTINGS.fov.portrait : SETTINGS.fov.landscape;
       camera.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight, false);
     };

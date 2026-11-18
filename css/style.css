@@ -515,7 +515,7 @@ h2 { font-size: clamp(36px, 7.4vw, 96px); }
   .scene--right { align-items: flex-start; text-align: left; }
   .scene--right .say { margin-left: 0; }
   .scene::before,
-  .scene--right::before { background: rgba(var(--void-rgb), 0.72); }
+  .scene--right::before { background: rgba(var(--void-rgb), 0.55); }
   .menu__state,
   .hud-coords { display: none; }
   .menu { gap: 10px; }
