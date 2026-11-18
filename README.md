@@ -48,7 +48,7 @@ python -m http.server
 - **Kieliversiot:** suomi on `index.html` ja englanti `en/index.html`. Kun muutat tekstiä, muuta se molempiin. Kielivalinta FI / EN on yläreunassa valikkonapin vieressä. Sivut on linkitetty toisiinsa hakukoneille (`hreflang`), ja skriptien tekstit valitaan sivun `lang`-määrityksen mukaan (`js/menu.js`, `js/copy.js`).
 - **Tekstit:** `index.html`. Jokainen rooli on oma `<section>`-osionsa, ja sen alla olevat laatikot ovat `.values`-elementin sisällä.
 - **Värit ja fontit:** `css/style.css`, kohta 1. Läpinäkyvät sävyt käyttävät rgb-muuttujia, esim. `rgba(var(--ember-rgb), 0.3)`.
-- **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit ja kameran pysähdyspaikat (yksi per osio).
+- **3D-metsä:** `js/forest.js`, `SETTINGS`-lohko tiedoston alussa: puiden määrä, piirtotaajuus (oletus 30 kertaa sekunnissa), värit, kameran pysähdyspaikat (yksi per osio), oranssi polku (`path`), kota (`kota`) ja nuotio (`fire`, myös kohta, jossa se syttyy).
 - **3D-metsän käynnistysviive:** `js/animations.js`, `FOREST_FALLBACK_MS`.
 - **Valikon roolitekstit** oikeassa ylänurkassa: `js/menu.js`, `SECTION_LABELS`.
 - **Versionumero** valikon alareunassa: `js/menu.js`, `SITE_VERSION` (ks. Versiointi). Numero on linkki GitHubin muutoslokiin, ja sen vieressä oleva GitHub-logo vie repoon.

@@ -262,6 +262,11 @@ main { position: relative; z-index: 4; overflow-x: clip; }
     rgba(var(--void-rgb), 0.78) 0%, rgba(var(--void-rgb), 0.78) calc(50vw + 30%),
     rgba(var(--void-rgb), 0.45) calc(50vw + 75%), rgba(var(--void-rgb), 0.3) 100%);
 }
+/* viimeisessä osiossa häivytys ohenee alareunassa, jotta polun päässä oleva kota ja nuotio näkyvät */
+.scene--contact::before {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0, 0, 0, 0.25) 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, rgba(0, 0, 0, 0.25) 100%);
+}
 .scene--right::before {
   background: linear-gradient(270deg,
     rgba(var(--void-rgb), 0.78) 0%, rgba(var(--void-rgb), 0.78) calc(50vw + 30%),

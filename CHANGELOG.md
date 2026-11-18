@@ -8,6 +8,11 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.9.0
+- 3D-metsään himmeä oranssi polku kameran reitille
+- Polun päähän kota, jonka edessä nuotio syttyy, kun sivu vieritetään loppuun
+- Yhteys-osion taustahäivytys ohenee alareunassa, jotta kota näkyy
+
 ## 1.8.6
 - Fontit kiinteiksi tiedostoiksi, jotta ne näkyvät oikein myös vanhemmissa iPhoneissa (ulkoasu ennallaan)
 - Varafontiksi Menlo tasalevyiselle tekstille
