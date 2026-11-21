@@ -83,9 +83,9 @@ git push --follow-tags
 
 ## Analytiikka ja evästeet
 
-Kävijämäärät mitataan Google Analytics 4:llä (`G-MMCSFYS9GC`). Seuranta latautuu vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2, oletuksena kielletty). Valinta tallennetaan selaimeen, ja sitä voi muuttaa valikon Evästeet-kohdasta. Toteutus on tiedostossa `js/consent.js`.
+Kävijämäärät mitataan Google Analytics 4:llä (`G-MMCSFYS9GC`) ja sivun käyttöä Microsoft Claritylla (`zh4hj173ay`, lämpökartat ja istuntotallenteet). Molemmat latautuvat vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`, oletuksena kielletty). Hylkäys poistaa sivuston omat evästeet (`_ga*`, `_clck`, `_clsk`). Valinta tallennetaan selaimeen, ja sitä voi muuttaa valikon Evästeet-kohdasta. Toteutus on tiedostossa `js/consent.js`.
 
-Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta: kirjastot ja fontit ovat repositoriossa.
+Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta (paitsi yllä olevat hyväksynnän jälkeen): kirjastot ja fontit ovat repositoriossa.
 
 ## Hakukoneet ja jakaminen
 

@@ -1,10 +1,13 @@
-/* Evästesuostumus ja Google Analytics 4.
+/* Evästesuostumus, Google Analytics 4 ja Microsoft Clarity.
    - Google Consent Mode v2: kaikki oletuksena kielletty.
-   - GA4 ladataan vasta, kun kävijä painaa Hyväksy. Valinta tallennetaan selaimeen.
+   - GA4 ja Clarity ladataan vasta, kun kävijä painaa Hyväksy. Valinta tallennetaan selaimeen.
    - Valintaa voi muuttaa valikon Evästeet-kohdasta. Hylkäys aiemman hyväksynnän jälkeen
-     poistaa GA:n evästeet ja lataa sivun uudelleen ilman seurantaa. */
+     poistaa GA:n ja Clarityn evästeet ja lataa sivun uudelleen ilman seurantaa. */
 (() => {
   const GA_ID = 'G-MMCSFYS9GC';
+  const CLARITY_ID = 'zh4hj173ay';
+  /* sivuston omat evästeet, jotka poistetaan hylkäyksen yhteydessä (GA: _ga*, Clarity: _clck, _clsk) */
+  const COOKIE_PREFIXES = ['_ga', '_cl'];
   const STORAGE_KEY = 'summanen-consent';
 
   window.dataLayer = window.dataLayer || [];
@@ -30,13 +33,24 @@
     document.head.appendChild(script);
     gtag('js', new Date());
     gtag('config', GA_ID);
+    loadClarity();
+  };
+
+  /* Microsoft Clarity (lämpökartat ja istuntotallenteet); sama latauskoodi kuin Clarityn ohjeessa */
+  const loadClarity = () => {
+    window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+    window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.clarity.ms/tag/${CLARITY_ID}`;
+    document.head.appendChild(script);
   };
 
   const removeAnalyticsCookies = () => {
     const host = location.hostname;
     document.cookie.split(';').forEach((cookie) => {
       const name = cookie.split('=')[0].trim();
-      if (!name.startsWith('_ga')) return;
+      if (!COOKIE_PREFIXES.some((prefix) => name.startsWith(prefix))) return;
       ['; path=/', `; path=/; domain=${host}`, `; path=/; domain=.${host}`]
         .forEach((scope) => { document.cookie = `${name}=; Max-Age=0${scope}`; });
     });
@@ -67,6 +81,7 @@
       choice = 'denied';
       hide();
       gtag('consent', 'update', { analytics_storage: 'denied' });
+      if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
       if (wasGranted) {
         removeAnalyticsCookies();
         location.reload();

@@ -8,6 +8,10 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.10.0
+- Microsoft Clarity (lämpökartat ja istuntotallenteet), latautuu vasta evästeiden hyväksynnän jälkeen
+- Evästeilmoituksen teksti mainitsee Clarityn
+
 ## 1.9.2
 - 3D-metsä näkyy paremmin puhelimissa: laajempi kuvakulma pystynäytöllä, tiheämpi metsä polun lähellä ja kevyempi tekstien taustahäivytys
 
