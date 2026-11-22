@@ -8,6 +8,9 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.11.2
+- Evästesivun pääotsikko kahdelle riville myös leveällä näytöllä
+
 ## 1.11.1
 - Evästeilmoitus näkyy myös evästesivulla, kunnes kävijä valitsee: linkki ilmoituksesta evästesivulle ei enää ohita valintaa
 
