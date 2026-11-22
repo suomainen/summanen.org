@@ -14,4 +14,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://summanen.org/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://summanen.org/"/>
   </url>
+  <url>
+    <loc>https://summanen.org/evasteet/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://summanen.org/evasteet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://summanen.org/en/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://summanen.org/evasteet/"/>
+  </url>
+  <url>
+    <loc>https://summanen.org/en/cookies/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://summanen.org/evasteet/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://summanen.org/en/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://summanen.org/evasteet/"/>
+  </url>
 </urlset>

@@ -11,6 +11,7 @@ Oskari Summasen henkilö- ja yrityssivu: järjestelmäarkkitehti, yrittäjä, ka
 index.html            sivun sisältö suomeksi (ensisijainen kieli)
 en/index.html         sama sivu englanniksi (polut ../css, ../js, ../img)
 404.html              "sivua ei löytynyt" -sivu
+evasteet/index.html   evästeet ja tietosuoja (englanniksi en/cookies/index.html)
 CNAME                 GitHub Pagesin verkkotunnus (älä poista)
 CHANGELOG.md          muutosloki: versiot ja mitä kussakin muuttui
 favicon.ico           selainvälilehden kuvake (16/32/48 px)
@@ -83,7 +84,7 @@ git push --follow-tags
 
 ## Analytiikka ja evästeet
 
-Kävijämäärät mitataan Google Analytics 4:llä (`G-MMCSFYS9GC`) ja sivun käyttöä Microsoft Claritylla (`zh4hj173ay`, lämpökartat ja istuntotallenteet). Molemmat latautuvat vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`, oletuksena kielletty). Hylkäys poistaa sivuston omat evästeet (`_ga*`, `_clck`, `_clsk`). Valinta tallennetaan selaimeen, ja sitä voi muuttaa valikon Evästeet-kohdasta. Toteutus on tiedostossa `js/consent.js`.
+Kävijämäärät mitataan Google Analytics 4:llä (`G-MMCSFYS9GC`) ja sivun käyttöä Microsoft Claritylla (`zh4hj173ay`, lämpökartat ja istuntotallenteet). Molemmat latautuvat vasta, kun kävijä hyväksyy evästeet (Google Consent Mode v2 ja Clarityn `consentv2`, oletuksena kielletty). Hylkäys poistaa sivuston omat evästeet (`_ga*`, `_clck`, `_clsk`). Valinta tallennetaan selaimeen, ja sitä voi muuttaa evästesivun kytkimellä (`evasteet/`, `en/cookies/`; valikon Evästeet-kohta ja evästeilmoituksen linkki vievät sinne). Evästesivulla on evästetaulukko, tietosuojateksti ja rekisterinpitäjä; kun lisäät tai poistat seurantapalvelun, päivitä taulukko molemmille kielille. Toteutus on tiedostossa `js/consent.js`.
 
 Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta (paitsi yllä olevat hyväksynnän jälkeen): kirjastot ja fontit ovat repositoriossa.
 

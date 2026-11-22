@@ -1,7 +1,7 @@
 /* Evästesuostumus, Google Analytics 4 ja Microsoft Clarity.
    - Google Consent Mode v2: kaikki oletuksena kielletty.
    - GA4 ja Clarity ladataan vasta, kun kävijä painaa Hyväksy. Valinta tallennetaan selaimeen.
-   - Valintaa voi muuttaa valikon Evästeet-kohdasta. Hylkäys aiemman hyväksynnän jälkeen
+   - Valintaa voi muuttaa evästesivun kytkimellä (evasteet/, en/cookies/). Hylkäys aiemman hyväksynnän jälkeen
      poistaa GA:n ja Clarityn evästeet ja lataa sivun uudelleen ilman seurantaa. */
 (() => {
   const GA_ID = 'G-MMCSFYS9GC';
@@ -9,6 +9,8 @@
   /* sivuston omat evästeet, jotka poistetaan hylkäyksen yhteydessä (GA: _ga*, Clarity: _clck, _clsk) */
   const COOKIE_PREFIXES = ['_ga', '_cl'];
   const STORAGE_KEY = 'summanen-consent';
+  /* evästesivun kytkimen tila sivun kielen mukaan */
+  const SWITCH_TEXT = { fi: { on: 'Päällä', off: 'Pois' }, en: { on: 'On', off: 'Off' } };
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = function () { dataLayer.push(arguments); }; /* gtag vaatii arguments-olion */
@@ -61,34 +63,47 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('consent');
-    if (!banner) return;
+    const switches = document.querySelectorAll('[data-consent-switch]');
+    const text = SWITCH_TEXT[document.documentElement.lang] || SWITCH_TEXT.fi;
 
-    const show = () => { banner.hidden = false; };
-    const hide = () => { banner.hidden = true; };
+    /* evästesivun kytkin näyttää nykyisen valinnan */
+    const showState = () => {
+      switches.forEach((sw) => {
+        const on = choice === 'granted';
+        sw.setAttribute('aria-checked', String(on));
+        sw.querySelector('.switch__state').textContent = on ? text.on : text.off;
+      });
+    };
 
-    if (choice !== 'granted' && choice !== 'denied') show();
-
-    document.getElementById('consent-accept').addEventListener('click', () => {
+    const accept = () => {
       saveChoice('granted');
       choice = 'granted';
       loadAnalytics();
-      hide();
-    });
+      if (banner) banner.hidden = true;
+      showState();
+    };
 
-    document.getElementById('consent-reject').addEventListener('click', () => {
+    const reject = () => {
       const wasGranted = choice === 'granted';
       saveChoice('denied');
       choice = 'denied';
-      hide();
+      if (banner) banner.hidden = true;
+      showState();
       gtag('consent', 'update', { analytics_storage: 'denied' });
       if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
       if (wasGranted) {
         removeAnalyticsCookies();
         location.reload();
       }
-    });
+    };
 
-    const openButton = document.getElementById('consent-open');
-    if (openButton) openButton.addEventListener('click', show);
+    showState();
+    switches.forEach((sw) => sw.addEventListener('click', () => (choice === 'granted' ? reject() : accept())));
+
+    /* ilmoitus näkyy etusivulla, kunnes kävijä on valinnut */
+    if (!banner) return;
+    if (choice !== 'granted' && choice !== 'denied') banner.hidden = false;
+    document.getElementById('consent-accept').addEventListener('click', accept);
+    document.getElementById('consent-reject').addEventListener('click', reject);
   });
 })();

@@ -8,6 +8,10 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.11.0
+- Oma evästesivu (evasteet/, en/cookies/): analytiikkakytkin, evästetaulukko, tietosuoja ja rekisterinpitäjä
+- Valikon Evästeet-kohta ja evästeilmoituksen linkki vievät evästesivulle
+
 ## 1.10.0
 - Microsoft Clarity (lämpökartat ja istuntotallenteet), latautuu vasta evästeiden hyväksynnän jälkeen
 - Evästeilmoituksen teksti mainitsee Clarityn
