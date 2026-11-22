@@ -100,7 +100,7 @@
     showState();
     switches.forEach((sw) => sw.addEventListener('click', () => (choice === 'granted' ? reject() : accept())));
 
-    /* ilmoitus näkyy etusivulla, kunnes kävijä on valinnut */
+    /* ilmoitus näkyy etu- ja evästesivulla, kunnes kävijä on valinnut */
     if (!banner) return;
     if (choice !== 'granted' && choice !== 'denied') banner.hidden = false;
     document.getElementById('consent-accept').addEventListener('click', accept);
