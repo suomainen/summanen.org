@@ -8,6 +8,11 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.12.1
+- Tietoturva: sisältöturvakäytäntö (Content-Security-Policy) kaikille sivuille
+- Dependabot (`.github/dependabot.yml`), `SECURITY.md` ja README:n Tietoturva-osio
+- Tarkistus: `npm audit` 0 haavoittuvuutta (three 0.187.0, gsap 3.12.5, esbuild 0.25.12); KEV-luettelossa (versio 2026.11.25) ei mitään näistä
+
 ## 1.12.0
 - three.js päivitetty r128 → r187 (oma kooste vain käytetyistä osista, ulkoasu ennallaan)
 - `package.json` kirjastojen versioille, jotta GitHubin Dependabot-hälytykset toimivat

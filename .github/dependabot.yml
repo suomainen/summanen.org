@@ -1,0 +1,22 @@
+# Dependabot tarkistaa viikoittain, onko sivun kirjastoille (three.js, GSAP) tai koontityökalulle
+# (esbuild) uusia versioita, ja tekee niistä pull requestin. Haavoittuvuushälytykset kytketään päälle
+# repon asetuksista: Settings → Advanced Security → Dependabot alerts ja Dependabot security updates.
+#
+# Huom: sivu käyttää kirjastoja js/vendor/-kansiosta, ei node_modulesista. Kun yhdistät three.js:n tai
+# GSAP:n päivityksen, aja koneellasi `npm install` ja `npm run build:three` (three.js) tai kopioi
+# GSAP:n uudet tiedostot node_modules/gsap/dist/-kansiosta js/vendor/-kansioon. Ohje: README, kohta Tietoturva.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Europe/Helsinki"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "Riippuvuudet"
+    groups:
+      npm:
+        patterns: ["*"]

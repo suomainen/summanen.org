@@ -38,6 +38,8 @@ tools/
   three-entry.js      three.js:n osat, joista js/vendor/three.min.js kootaan
 package.json          kirjastojen versiot (Dependabot) ja three.js:n koontikomento
 package-lock.json     kirjastojen tarkat versiot
+SECURITY.md           haavoittuvuuksien ilmoittaminen
+.github/dependabot.yml  viikoittainen riippuvuuksien tarkistus
 ```
 
 ## Esikatselu
@@ -96,14 +98,36 @@ Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta (paitsi yllä olevat h
 
 `index.html`:n `<head>`-osassa on otsikko, kuvaus, kanoninen osoite, Open Graph- ja Twitter-jakotiedot (jakokuva `img/og-kuva.jpg`, 1200 × 630 px) sekä JSON-LD-rakenteinen tieto (WebSite ja Person).
 
-## Kirjastot ja tietoturva
+## Tietoturva
 
-Sivu ei tarvitse npm:ää toimiakseen: kirjastot ovat valmiina `js/vendor/`-kansiossa. `package.json` kertoo niiden versiot, jotta GitHubin **Dependabot-hälytykset** ilmoittavat, jos kirjastosta löytyy haavoittuvuus (Settings → Advanced Security → Dependabot alerts → Enable; toimii ilman GitHub Actionsia).
+### Mitä suojattavaa on
 
-- **three.js** (`js/vendor/three.min.js`) on oma kooste uusimmasta versiosta: siinä ovat vain ne osat, joita `js/forest.js` käyttää (luettelo `tools/three-entry.js`-tiedostossa), ja se asettaa globaalin `THREE`-olion. Päivitys: vaihda versio `package.json`:iin ja aja `npm install` ja `npm run build:three`. Jos `forest.js` alkaa käyttää uutta three.js:n osaa, lisää se `tools/three-entry.js`-tiedostoon.
+Sivusto on staattinen: ei palvelinkoodia, tietokantaa, kirjautumista eikä lomakkeita. Yhteydenotto tapahtuu sähköposti- ja puhelinlinkeillä. Evästeitä käytetään vain analytiikkaan (Google Analytics ja Microsoft Clarity), ja nekin vasta kävijän suostumuksella (ks. Analytiikka ja evästeet).
+
+| Riski | Miten hoidettu |
+|---|---|
+| GitHub-tili ja repo (joku muuttaa sivun sisältöä) | Kaksivaiheinen tunnistautuminen GitHub-tilillä; muutokset näkyvät git-historiassa |
+| Haitallinen koodi sivulla (esim. muokattu kirjasto tai lisätty skripti) | Sisältöturvakäytäntö (Content-Security-Policy) jokaisen sivun `<head>`-osassa: skriptejä vain sivuston omista tiedostoista sekä Googlen ja Clarityn osoitteista, ei sivun sisäisiä skriptejä eikä yhteyksiä muihin palvelimiin |
+| Kirjastojen haavoittuvuudet (three.js, GSAP) | Dependabot ja `npm audit`, ks. alla |
+| Analytiikkapalvelut | Ladataan vasta suostumuksen jälkeen; palveluiden ylläpito on Googlen ja Microsoftin vastuulla |
+
+Sisältöturvakäytäntö: jos lisäät sivulle uuden ulkoisen palvelun (skripti, kuva, fontti tai yhteys), lisää sen osoite `Content-Security-Policy`-riville kaikissa sivuissa (`index.html`, `en/index.html`, `evasteet/index.html`, `en/cookies/index.html`; 404-sivulla on oma, tiukempi rivi). Muuten selain estää sen ja kertoo siitä konsolissa.
+
+### Mitä GitHub hoitaa
+
+GitHub Pages ylläpitää palvelimet ja niiden päivitykset, HTTPS-yhteyden ja varmenteen sekä palvelunestosuojauksen. GitHub-tilin kaksivaiheinen tunnistautuminen on ylläpitäjän vastuulla.
+
+### Riippuvuuksien seuranta
+
+Sivu ei tarvitse npm:ää toimiakseen: kirjastot ovat valmiina `js/vendor/`-kansiossa. `package.json` kertoo niiden versiot, ja **Dependabot** (`.github/dependabot.yml`) tarkistaa ne viikoittain ja tekee päivityksistä pull requestin. Haavoittuvuushälytykset kytketään päälle repon asetuksista (Settings → Advanced Security → Dependabot alerts); ne eivät käytä GitHub Actionsia.
+
+- **three.js** (`js/vendor/three.min.js`) on oma kooste: siinä ovat vain ne osat, joita `js/forest.js` käyttää (luettelo `tools/three-entry.js`-tiedostossa), ja se asettaa globaalin `THREE`-olion. Päivitys: vaihda versio `package.json`:iin (tai yhdistä Dependabotin pull request) ja aja `npm install` ja `npm run build:three`. Jos `forest.js` alkaa käyttää uutta three.js:n osaa, lisää se `tools/three-entry.js`-tiedostoon.
 - **GSAP** (`gsap.min.js`, `ScrollTrigger.min.js`) kopioidaan sellaisenaan npm-paketin `dist`-kansiosta; päivitä myös versio `package.json`:iin.
+- **esbuild** on vain koontityökalu (`devDependencies`), eikä se päädy sivulle.
 - Uusin three.js vaatii WebGL 2:n. Hyvin vanhoissa selaimissa (esim. iOS 14 tai vanhempi) 3D-metsä jätetään pois, ja muu sivu toimii normaalisti.
-- **Haavoittuvuuksien tarkistus:** `npm audit` ja CISA:n KEV-luettelo (tunnetusti hyödynnetyt haavoittuvuudet, JSON/CSV) – hae luettelosta kirjastojen nimiä.
+- **Käsin:** `npm audit`. Jokainen löydetty haavoittuvuus (CVE) verrataan CISAn KEV-luetteloon (tunnetusti hyödynnetyt haavoittuvuudet): KEV-luettelossa oleva korjataan heti, muut seuraavan päivityksen yhteydessä.
+
+Haavoittuvuuksien ilmoittaminen: [SECURITY.md](SECURITY.md).
 
 ## Suorituskyky
 
