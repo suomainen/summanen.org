@@ -1,0 +1,16 @@
+{
+  "name": "summanen-org",
+  "version": "0.0.0",
+  "private": true,
+  "description": "summanen.org-sivuston kolmannen osapuolen kirjastot. Sivu ei tarvitse npm:ää; tämä tiedosto kertoo kirjastojen versiot GitHubin Dependabot-hälytyksille ja kokoaa three.js-tiedoston.",
+  "scripts": {
+    "build:three": "esbuild tools/three-entry.js --bundle --minify --format=iife --target=es2018 --legal-comments=inline --outfile=js/vendor/three.min.js"
+  },
+  "dependencies": {
+    "gsap": "3.12.5",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

@@ -8,6 +8,11 @@ Sivuston versiot. Numero on muotoa **pää.osa.korjaus**:
 
 Nykyinen versio näkyy sivun valikon alareunassa. Jokaisella versiolla on samanniminen git-tagi (esim. `v1.7.0`).
 
+## 1.12.0
+- three.js päivitetty r128 → r187 (oma kooste vain käytetyistä osista, ulkoasu ennallaan)
+- `package.json` kirjastojen versioille, jotta GitHubin Dependabot-hälytykset toimivat
+- 3D-metsä jätetään pois selaimissa, joissa ei ole WebGL 2:ta
+
 ## 1.11.2
 - Evästesivun pääotsikko kahdelle riville myös leveällä näytöllä
 

@@ -30,10 +30,14 @@ js/
   animations.js       vieritysanimaatiot, edistymispalkki ja 3D-metsän käynnistys
   menu.js             valikko ja nykyisen osion seuranta
   copy.js             sähköpostin ja puhelinnumeron kopiointinapit
-  vendor/             kolmannen osapuolen kirjastot (ei muokata)
+  vendor/             kolmannen osapuolen kirjastot (ei muokata; three.min.js kootaan, ks. Kirjastot)
 fonts/                fonttitiedostot (woff2)
 img/                  logot (WebP), henkilökuvat ja jakokuva (og-kuva.jpg)
   icons/              Android-kuvakkeet (192/512 px)
+tools/
+  three-entry.js      three.js:n osat, joista js/vendor/three.min.js kootaan
+package.json          kirjastojen versiot (Dependabot) ja three.js:n koontikomento
+package-lock.json     kirjastojen tarkat versiot
 ```
 
 ## Esikatselu
@@ -92,6 +96,15 @@ Muuten sivu ei lataa mitään ulkopuolisilta palvelimilta (paitsi yllä olevat h
 
 `index.html`:n `<head>`-osassa on otsikko, kuvaus, kanoninen osoite, Open Graph- ja Twitter-jakotiedot (jakokuva `img/og-kuva.jpg`, 1200 × 630 px) sekä JSON-LD-rakenteinen tieto (WebSite ja Person).
 
+## Kirjastot ja tietoturva
+
+Sivu ei tarvitse npm:ää toimiakseen: kirjastot ovat valmiina `js/vendor/`-kansiossa. `package.json` kertoo niiden versiot, jotta GitHubin **Dependabot-hälytykset** ilmoittavat, jos kirjastosta löytyy haavoittuvuus (Settings → Advanced Security → Dependabot alerts → Enable; toimii ilman GitHub Actionsia).
+
+- **three.js** (`js/vendor/three.min.js`) on oma kooste uusimmasta versiosta: siinä ovat vain ne osat, joita `js/forest.js` käyttää (luettelo `tools/three-entry.js`-tiedostossa), ja se asettaa globaalin `THREE`-olion. Päivitys: vaihda versio `package.json`:iin ja aja `npm install` ja `npm run build:three`. Jos `forest.js` alkaa käyttää uutta three.js:n osaa, lisää se `tools/three-entry.js`-tiedostoon.
+- **GSAP** (`gsap.min.js`, `ScrollTrigger.min.js`) kopioidaan sellaisenaan npm-paketin `dist`-kansiosta; päivitä myös versio `package.json`:iin.
+- Uusin three.js vaatii WebGL 2:n. Hyvin vanhoissa selaimissa (esim. iOS 14 tai vanhempi) 3D-metsä jätetään pois, ja muu sivu toimii normaalisti.
+- **Haavoittuvuuksien tarkistus:** `npm audit` ja CISA:n KEV-luettelo (tunnetusti hyödynnetyt haavoittuvuudet, JSON/CSV) – hae luettelosta kirjastojen nimiä.
+
 ## Suorituskyky
 
 Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynnistyy vasta, kun sivu on latautunut ja kävijä vierittää tai liikuttaa hiirtä, tai viimeistään kuuden sekunnin kuluttua. Metsä piirretään 30 kertaa sekunnissa, piirtäminen pysähtyy kun välilehti on piilossa, ja puhelimessa puita on vähemmän ja piirtotarkkuus matalampi.
@@ -100,7 +113,7 @@ Sivun skriptit ladataan vasta HTML:n jälkeen (`defer`). Raskas 3D-metsä käynn
 
 | Tiedosto | Versio | Lisenssi tai oikeus |
 |---|---|---|
-| `js/vendor/three.min.js` | three.js r128 | MIT |
+| `js/vendor/three.min.js` | three.js r187 (oma kooste, vain käytetyt osat) | MIT |
 | `js/vendor/gsap.min.js`, `ScrollTrigger.min.js` | GSAP 3.12.5 | GSAP Standard License (maksuton) |
 | `fonts/archivo-*.woff2` (4 tiedostoa) | Archivo | SIL Open Font License 1.1 |
 | `fonts/jetbrains-mono-*.woff2` (2 tiedostoa) | JetBrains Mono | SIL Open Font License 1.1 |

@@ -46,7 +46,7 @@
     if (started) return;
     started = true;
     START_EVENTS.forEach((type) => removeEventListener(type, start));
-    window.startForest(canvas, { small });
+    if (window.startForest(canvas, { small }) === false) canvas.style.display = 'none';
   };
 
   const waitForVisitor = () => {

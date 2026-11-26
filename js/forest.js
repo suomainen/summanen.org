@@ -389,13 +389,24 @@
     })));
   };
 
-  /* Käynnistää metsän annetussa canvasissa. small = puhelin tai kosketusnäyttö. */
+  /* Käynnistää metsän annetussa canvasissa. small = puhelin tai kosketusnäyttö.
+     Palauttaa false, jos selain ei tue WebGL 2:ta (esim. hyvin vanha iPhone); silloin tausta jätetään pois. */
   window.startForest = (canvas, { small = false } = {}) => {
+    /* värit lasketaan kuten ennen three.js r152:ta, jotta sävyt ja läpinäkyvyydet pysyvät ennallaan */
+    THREE.ColorManagement.enabled = false;
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'low-power' });
+    } catch (e) {
+      return false;
+    }
+    renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+
     const scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(SETTINGS.colors.background, SETTINGS.fog);
 
     const camera = new THREE.PerspectiveCamera(SETTINGS.fov.landscape, innerWidth / innerHeight, 0.1, 400);
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: !small, powerPreference: 'low-power' });
     renderer.setPixelRatio(Math.min(devicePixelRatio || 1, small ? SETTINGS.pixelRatio.mobile : SETTINGS.pixelRatio.desktop));
 
     const grid = buildGround(scene);
@@ -435,7 +446,7 @@
     SETTINGS.camera.slice(1).forEach((stop) => timeline.to(cam, { ...stop, ease: 'none' }));
 
     /* piirto: rajattu SETTINGS.fps kertaan sekunnissa ja pysäytetty, kun välilehti on piilossa */
-    const clock = new THREE.Clock();
+    const startTime = performance.now();
     const frameMs = 1000 / SETTINGS.fps;
     let last = 0;
     let running = true;
@@ -449,7 +460,7 @@
       if (now - last < frameMs - 1) return;
       last = now;
 
-      const t = clock.getElapsedTime();
+      const t = (now - startTime) / 1000;
       camera.position.set(cam.x + Math.sin(t * 0.22) * 1.1, cam.y + Math.sin(t * 0.3) * 0.5, cam.z);
       camera.lookAt(cam.lx, cam.ly, cam.lz);
       updatePulses(t);
@@ -470,5 +481,6 @@
 
     requestAnimationFrame(render);
     canvas.classList.add('on');
+    return true;
   };
 })();
